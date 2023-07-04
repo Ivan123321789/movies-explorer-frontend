@@ -1,0 +1,30 @@
+.header {
+  width: 1280px;
+  padding: 18px 70px;
+  background-color: #ffffff;
+
+}
+
+.header__logo {
+  width: 38px;
+  cursor: pointer;
+}
+
+.header__logo:hover {
+  opacity: .8;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding: 18px 14px;
+  }
+}
+
+/* @media screen and (min-width: 769px) { */
