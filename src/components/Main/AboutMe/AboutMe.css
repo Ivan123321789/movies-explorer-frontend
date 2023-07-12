@@ -1,10 +1,11 @@
 .about-me {
-  width: 1280px;
+  max-width: 1280px;
   background: #fff;
   padding: 110px 70px 0;
 }
 
 .about-me__title {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -32,12 +33,14 @@
 
 .about-me__photo {
   width: 270px;
+  height: 327px;
   object-fit: cover;
   object-position: top;
   border-radius: 10px;
 }
 
 .about-me__subtitle {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
@@ -46,6 +49,7 @@
 }
 
 .about-me__prof {
+  font-family: 'Inter';
   margin: 18px 0 0;
   font-weight: 500;
   font-size: 18px;
@@ -53,15 +57,17 @@
 }
 
 .about-me__text {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
   max-width: 600px;
-  margin: 26px 70px 82px 0;
+  margin: 26px 70px 99px 0;
 }
 
 .about-me__link {
+  font-family: 'Inter';
   color: black;
   text-decoration: none;
   font-weight: 500;

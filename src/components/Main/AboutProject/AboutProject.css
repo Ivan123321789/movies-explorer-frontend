@@ -3,6 +3,7 @@
 }
 
 .about-project__title {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -30,6 +31,7 @@
 }
 
 .about-project__info-title {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

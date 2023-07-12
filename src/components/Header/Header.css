@@ -1,8 +1,10 @@
 .header {
-  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 18px 70px;
   background-color: #ffffff;
-
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .header__logo {
@@ -21,10 +23,8 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 460px) {
   .header {
     padding: 18px 14px;
   }
 }
-
-/* @media screen and (min-width: 769px) { */

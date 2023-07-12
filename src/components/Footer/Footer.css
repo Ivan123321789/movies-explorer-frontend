@@ -6,6 +6,7 @@
 }
 
 .footer__title {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -37,6 +38,7 @@
 }
 
 .footer__link {
+  font-family: 'Inter';
   margin-top: 20px;
   font-style: normal;
   font-weight: 400;
