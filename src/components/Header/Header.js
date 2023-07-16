@@ -6,9 +6,20 @@ import NavigationMain from '../NavigationMain/NavigationMain';
 
 function Header() {
   return (
+    // <header className='header'> 
+    //   <div className='header__container'>
+    //     <Link exact to="/">
+    //       <img
+    //         src={headerLogo}
+    //         alt='смайлик-улыбака на зеленом фоне'
+    //         className='header__logo'
+    //       />
+    //     </Link>  
+    //     <NavigationMain />
+    //   </div>
+    // </header>
     <header className='header'> 
-      <div className='header__container'>
-        <Link exact to="/" className="menu__link">
+        <Link exact to="/">
           <img
             src={headerLogo}
             alt='смайлик-улыбака на зеленом фоне'
@@ -16,7 +27,6 @@ function Header() {
           />
         </Link>  
         <NavigationMain />
-      </div>
     </header>
   );
 }

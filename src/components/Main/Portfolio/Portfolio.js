@@ -10,7 +10,7 @@ function Portfolio() {
         <li className="portfolio__row">
           <div>
             <a
-              href="https://github.com/Ivan123321789/mesto"
+              href="https://github.com/Ivan123321789/how-to-leaarn"
               className="portfolio__link"
               target="_blank"
               rel='noreferrer'
@@ -20,7 +20,7 @@ function Portfolio() {
           </div>
           <div>
             <a
-              href="https://github.com/Ivan123321789/mesto"
+              href="https://github.com/Ivan123321789/how-to-leaarn"
               className="portfolio__arrow"
               target="_blank"
               rel='noreferrer'
@@ -36,7 +36,7 @@ function Portfolio() {
         <li className="portfolio__row">
           <div>
             <a
-              href="https://github.com/Ivan123321789/mesto"
+              href="https://github.com/Ivan123321789/russian-travel-main"
               className="portfolio__link"
               target="_blank"
               rel='noreferrer'
@@ -46,7 +46,7 @@ function Portfolio() {
           </div>
           <div>
             <a
-              href="https://github.com/Ivan123321789/mesto" 
+              href="https://github.com/Ivan123321789/russian-travel-main" 
               className="portfolio__arrow"
               target="_blank"
               rel='noreferrer'

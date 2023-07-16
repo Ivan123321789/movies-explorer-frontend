@@ -5,6 +5,7 @@ import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
 import Header from '../Header/Header';
+import HeaderMovie from "../Header/HeaderMovie";
 import Footer from '../Footer/Footer';
 
 function Main() {
@@ -12,6 +13,7 @@ function Main() {
     <>
       <main>
         <Header />
+        <HeaderMovie />
         <Promo />
         <AboutProject />
         <Techs />

@@ -1,11 +1,11 @@
-.header__nav {
+.header__nav-main {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 186px;
 }
 
-.header__reg {
+.header__nav-reg {
   width: 77px;
   font-family: 'Inter';
   font-size: 12px;
@@ -17,11 +17,11 @@
   cursor: pointer;
 }
 
-.header__reg:hover {
+.header__nav-reg:hover {
   opacity: .7;
 }
 
-.header__in {
+.header__nav-in {
   width: 76px;
   height: 32px;
   padding: 0;
@@ -38,22 +38,22 @@
   cursor: pointer;
 }
 
-.header__in:hover {
+.header__nav-in:hover {
   opacity: .8;
 }
 
 @media screen and (max-width: 500px) {
-  .header__nav {
+  .header__nav-main {
     width: 150px;
   }
 
-  .header__reg {
+  .header__nav-reg {
     font-size: 10px;
     line-height: 16px;
     padding-right: 14px;
   }
 
-  .header__in {
+  .header__nav-in {
     width: 53px;
     height: 26px;
     font-size: 10px;

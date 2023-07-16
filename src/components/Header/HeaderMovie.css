@@ -1,5 +1,6 @@
-.header {
+.header-movie {
   max-width: 1280px;
+  /* width: 1140px; */
   margin: 0 auto;
   padding: 18px 70px;
   background-color: #ffffff;
@@ -8,23 +9,31 @@
   align-items: center;
 }
 
-.header__logo {
+.header-movie__logo {
   width: 38px;
+  padding-right: 44px;
+  align-items: center;
   cursor: pointer;
 }
 
-.header__logo:hover {
+.header-movie__logo:hover {
   opacity: .8;
 }
 
+.header-movie__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 @media screen and (max-width: 768px) {
-  .header {
+  .header-movie {
     padding: 18px 30px;
   }
 }
 
 @media screen and (max-width: 460px) {
-  .header {
+  .header-movie {
     padding: 18px 14px;
   }
 }

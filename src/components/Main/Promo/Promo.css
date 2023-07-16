@@ -61,8 +61,9 @@
   }
 }
 
-@media screen and (max-width: 555px) {
-  .promo {
+@media screen and (max-width: 600px) {
+  .promo__container {
+    min-width: 292px;
     width: calc(100% - 28px);
     min-height: 586px;
     gap: 212px;
@@ -75,5 +76,20 @@
     letter-spacing: -1.16px;
     max-width: 292px;
     margin: 0 auto;
+    padding-top: 220px;
+    padding-bottom: 212px;
+  }
+
+  .promo__nav {
+    width: 258px;
+  }
+
+  .promo__btn {
+    width: 82px;
+    height: 26px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
   }
 }
