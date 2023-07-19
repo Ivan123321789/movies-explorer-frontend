@@ -1,26 +1,24 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import './HeaderMovie.css';
-import '../NavigationMovie/NavigationMovie.css';
 import headerLogo from '../../images/logo.svg';
-// import NavigationMovie from '../NavigationMovie/NavigationMovie';
 
-function HeaderMovie() {
+function HeaderMovie({onBurgerClick}) {
   return (
     <header className='header-movie'> 
       <div className='header-movie__container'>
-        <Link exact to="/" className="header-movie__link">
+        <Link exact to='/' >
           <img
             src={headerLogo}
             alt='смайлик-улыбака на зеленом фоне'
             className='header-movie__logo'
           />
-        </Link>
-        <NavLink to='/' className='header__nav-link'>Главная</NavLink>
-        <NavLink to='/movies' className='header__nav-link_active'>Фильмы</NavLink>
-        <NavLink to='/saved-movies' className='header__nav-link'>Сохраненные фильмы</NavLink>
+        </Link>                
+        <NavLink to='/movies' className={({isActive}) => `header-movie__link ${isActive ? 'header-movie__link_active' : ''}`}>Фильмы</NavLink>
+        <NavLink to='/saved-movies' className={({isActive}) => `header-movie__link ${isActive ? 'header-movie__link_active' : ''}`}>Сохраненные фильмы</NavLink> 
       </div>
-      <Link to="/profile" className="header__nav-akkaunt">Аккаунт</Link>
+      <Link to='/profile' className='header-movie__nav-akkaunt'>Аккаунт</Link>
+      <button className='header-movie__burger' onClick={onBurgerClick} ></button>
     </header>
   );
 }

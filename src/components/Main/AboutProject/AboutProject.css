@@ -1,9 +1,11 @@
 .about-project {
+  max-width: 1140px;
+  margin: 0 auto;
   padding: 110px 70px;
 }
 
 .about-project__title {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -31,7 +33,7 @@
 }
 
 .about-project__info-title {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -40,6 +42,7 @@
 }
 
 .about-project__info-text {
+  font-family: 'Inter', sans-serif;
   margin: 26px 0 0 0;
   font-style: normal;
   font-weight: 400;
@@ -68,6 +71,7 @@
   padding-top: 9px;
   text-align: center;
   margin: 0;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -80,6 +84,7 @@
   padding-top: 9px;
   text-align: center;
   margin: 0;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -89,6 +94,7 @@
 .about-project__subtitle {
   margin: 14px 0 0 0;
   text-align: center;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

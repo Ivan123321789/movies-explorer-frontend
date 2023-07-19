@@ -12,7 +12,6 @@ function SearchForm() {
                     className='search-form__input'
                     placeholder='Фильм'
                     required />
-
                     <button type='submit' className='search-form__button'/>
                 </div>
                 <Checkbox /> 

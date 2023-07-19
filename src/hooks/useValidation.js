@@ -23,7 +23,7 @@ function useValidation() {
     [setValues, setErrors, setIsValid]);
 
 
-  return { values, handleChange, resetForm, errors, isValid};
+  return { values, handleChange, resetForm, errors, isValid, setValues};
 } 
 
 export default useValidation

@@ -8,12 +8,12 @@ import Header from '../Header/Header';
 import HeaderMovie from "../Header/HeaderMovie";
 import Footer from '../Footer/Footer';
 
-function Main() {
+function Main({onBurgerClick}) {
   return (
     <>
       <main>
         <Header />
-        <HeaderMovie />
+        <HeaderMovie onBurgerClick={onBurgerClick}/>
         <Promo />
         <AboutProject />
         <Techs />

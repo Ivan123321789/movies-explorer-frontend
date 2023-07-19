@@ -1,22 +1,20 @@
 import React from 'react';
-import './Movies.css';
+import './SavedMovies.css';
 import HeaderMovie from '../Header/HeaderMovie';
 import SearchForm from '../SearchForm/SearchForm';
 import Preloader from '../Preloader/Preloader';
-import MoviesList from '../MoviesList/MoviesList';
-import MoreFilmsButton from '../MoreFilmsButton/MoreFilmsButton';
+import MoviesList2 from '../MoviesList/MovieList2';
 import Footer from '../Footer/Footer';
 
-function Movies({onBurgerClick}) {
+function SavedMovies({onBurgerClick}) {
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
       <SearchForm />
       <Preloader />
-      <MoviesList />
-      <MoreFilmsButton />
+      <MoviesList2 />
       <Footer />
     </>
   );
 }
-export default Movies;
+export default SavedMovies;
