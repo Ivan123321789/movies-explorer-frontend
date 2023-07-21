@@ -1,24 +1,61 @@
 import React from 'react';
 import './MoviesList.css';
-import Card1 from '../Card/Card1';
-import Card2 from '../Card/Card2';
+import Card from '../Card/Card';
+import film1 from '../../images/film1.png';
+import film2 from '../../images/film2.png';
 
 function MoviesList() {
   return (
     <>
       <div className='movies__items'>
-        <Card1 />
-        <Card2 />
-        <Card1 />
-        <Card2 />
-        <Card1 />
-        <Card2 />
-        <Card1 />
-        <Card2 />
-        <Card1 />
-        <Card2 />
-        <Card1 />
-        <Card2 />
+        <Card
+        title='Короткое название'
+        duration='1ч 42мин'
+        picture={film1}/>
+        <Card
+        title='Длинное название фильма которое надо спрятать'
+        duration='40 мин'
+        picture={film2} />
+        <Card
+        title='Короткое название'
+        duration='1ч 42мин'
+        picture={film1}/>
+        <Card
+        title='Длинное название фильма которое надо спрятать'
+        duration='40 мин'
+        picture={film2} />
+        <Card
+        title='Короткое название'
+        duration='1ч 42мин'
+        picture={film1}/>
+        <Card
+        title='Длинное название фильма которое надо спрятать'
+        duration='40 мин'
+        picture={film2} />
+        <Card
+        title='Короткое название'
+        duration='1ч 42мин'
+        picture={film1}/>
+        <Card
+        title='Длинное название фильма которое надо спрятать'
+        duration='40 мин'
+        picture={film2} />
+        <Card
+        title='Короткое название'
+        duration='1ч 42мин'
+        picture={film1}/>
+        <Card
+        title='Длинное название фильма которое надо спрятать'
+        duration='40 мин'
+        picture={film2} />
+        <Card
+        title='Короткое название'
+        duration='1ч 42мин'
+        picture={film1}/>
+        <Card
+        title='Длинное название фильма которое надо спрятать'
+        duration='40 мин'
+        picture={film2} />
       </div>
     </>
 );
