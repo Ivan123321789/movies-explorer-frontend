@@ -21,7 +21,7 @@ function Register({resetMessage}) {
       isValid={isValid}
       title='Добро пожаловать!'
       name='register'
-      message={'Проверка связи) Регистрация будет на функционале' || ''}
+      message={''}
       textButton='Зарегистрироваться'
       route='/signin'
       subtitle='Уже зарегистрированы?'

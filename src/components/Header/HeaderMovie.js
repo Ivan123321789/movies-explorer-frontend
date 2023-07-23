@@ -7,7 +7,7 @@ function HeaderMovie({onBurgerClick}) {
   return (
     <header className='header-movie'> 
       <div className='header-movie__container'>
-        <Link exact to='/' >
+        <Link to='/' className='header-movie__logo-link'>
           <img
             src={headerLogo}
             alt='смайлик-улыбака на зеленом фоне'

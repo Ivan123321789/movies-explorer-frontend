@@ -11,16 +11,14 @@ import Footer from '../Footer/Footer';
 function Main({onBurgerClick}) {
   return (
     <>
-      <main>
-        <Header />
-        <HeaderMovie onBurgerClick={onBurgerClick}/>
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <AboutMe />
-        <Portfolio />
-        <Footer />
-      </main>
+      <Header />
+      {/* <HeaderMovie onBurgerClick={onBurgerClick}/> */}
+      <Promo />
+      <AboutProject />
+      <Techs />
+      <AboutMe />
+      <Portfolio />
+      <Footer />
     </>
   );
 }

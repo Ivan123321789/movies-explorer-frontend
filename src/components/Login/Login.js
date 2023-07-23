@@ -21,7 +21,7 @@ function Login({resetMessage}) {
       isValid={isValid}
       title='Рады видеть!'
       name='login'
-      message={'Авторизация будет на функционале' || ''}
+      message={''}
       textButton='Войти'
       route='/signup'
       subtitle='Еще не зарегистрированы?'

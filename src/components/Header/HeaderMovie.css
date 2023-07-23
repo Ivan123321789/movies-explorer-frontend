@@ -1,7 +1,7 @@
 .header-movie {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 18px 70px 0;
+  padding: 18px 70px 18px;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -51,9 +51,15 @@
   opacity: .8;
 }
 
+.header-movie__logo-link {
+  margin: 0;
+  padding: 0;
+  line-height: .6;
+}
+
 .header-movie__logo {
   width: 38px;
-  padding-right: 28px;
+  padding: 0 44px 0 0;
   align-items: center;
   cursor: pointer;
 }

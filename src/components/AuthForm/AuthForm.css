@@ -10,14 +10,14 @@
 .authform__logo {
   width: 38px;
   height: 38px;
-  padding-bottom: 40px;
+  padding-bottom: 36px;
 }
 
 .authform__title {
   margin: 0;
   padding-bottom: 40px;
   text-align: start;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -26,14 +26,20 @@
 }
 
 .authform__sign {
+  position: absolute;
+  top: 613px;
+  width: 396px;
+  /* left: 50%;
+  right: 50%; */
   display: flex;
+  justify-content: center;
   margin: 0 auto;
 }
 
 .authform__subtitle {
   margin: 0;
   padding-right: 6px;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -43,7 +49,7 @@
 }
 
 .authform__link {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -67,7 +73,7 @@
 .authform__form-label {
   display: flex;
   flex-direction: column;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -76,13 +82,15 @@
 }
 
 .authform__form-input {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   padding-bottom: 10px;
   width: 396px;
   height: 17px;
-  margin: 5px 0 6px;
+  /* margin: 5px 0 6px; */
+  margin: 5px 0 3px;
   background: #FFFFFF;
   border-radius: 8px;
   border-bottom-left-radius: 0;
@@ -108,6 +116,7 @@
 }
 
 .authform__form-input_invalid {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
@@ -122,8 +131,10 @@
 }
 
 .authform__form-input-error {
+  display: block;
+  box-sizing: border-box;
   width: 396px;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -131,8 +142,8 @@
   color: #EE3465;
   margin: 0 0 0 0;
   box-sizing: border-box;
-  min-height: 10px;
-  padding-bottom: 6px;
+  height: 20px;
+  /* padding-bottom: 12px; */
 }
 
 .authform__form-fieldset {
@@ -143,9 +154,8 @@
 }
 
 .authform__form-message {
-  margin: 126px 0 20px;
-  /* margin-top: 126px; */
-
+  margin: 164px 0 20px;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
@@ -162,13 +172,15 @@
 }
 
 .authform__form-submit {
+  position: absolute;
+  top: 552px;
   width: 396px;
   height: 45px;
   margin: 0;
   padding: 0;
   border-radius: 3px;
   border: none;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -193,8 +205,8 @@
 
 .authform__form-link {
   width: 396px;
-  height: 45px;
-  margin: 0;
+  height: 17px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 800px) {

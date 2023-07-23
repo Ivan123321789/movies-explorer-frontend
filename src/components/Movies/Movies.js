@@ -12,7 +12,7 @@ function Movies({onBurgerClick}) {
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
       <SearchForm />
-      <Preloader />
+      {/* <Preloader /> */}
       <MoviesList />
       <MoreFilmsButton />
       <Footer />

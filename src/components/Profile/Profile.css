@@ -16,7 +16,7 @@
   color: #000000;
   max-width: 410px;
   margin: 0;
-  padding-bottom: 123px;
+  padding-bottom: 89px;
 }
 
 .profile__form {
@@ -41,12 +41,12 @@
   font-size: 11px;
   line-height: 13px;
   border-bottom: 1px solid #E8E8E8;
-  padding: 16px 0 0;
+  padding: 18px 0 0;
   justify-content: space-between;
 }
 
 .profile__label:nth-child(2) {
-  padding-bottom: 156px;
+  padding-bottom: 153px;
   border-bottom: none;
 }
 
@@ -58,7 +58,7 @@
   color: #000000;
   text-align: right;
   width: 370px;
-  margin: 0 0 4px;
+  margin: 0 0 3px;
   padding: 0;
   background-color: #fff;
   border: none;
@@ -73,7 +73,7 @@
   color: #EE3465;
   display: block;
   height: 12px;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .profile__button {
@@ -128,7 +128,7 @@
   line-height: 13px;
   text-align: center;
   color: #EE3465;
-  padding-bottom: 20px;
+  padding-bottom: 22px;
 }
 
 .profile__button-save {

@@ -7,7 +7,7 @@ import NavigationMain from '../NavigationMain/NavigationMain';
 function Header() {
   return (
     <header className='header'> 
-        <Link exact to="/">
+        <Link to="/">
           <img
             src={headerLogo}
             alt='смайлик-улыбака на зеленом фоне'
