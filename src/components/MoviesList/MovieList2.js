@@ -19,10 +19,6 @@ function MoviesList() {
         title='Короткое название'
         duration='1ч 42мин'
         picture={film1}/>
-        <Card
-        title='Короткое название'
-        duration='1ч 42мин'
-        picture={film1}/>
       </div>
     </>
 );

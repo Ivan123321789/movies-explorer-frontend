@@ -86,11 +86,16 @@
 
 @media screen and (max-width: 800px) {
   .about-me {
-    padding: 90px 50px;
+    padding: 90px 50px 0;
   }
 
   .about-me__title {
     padding: 0 0 23px 0;
+  }
+
+  .about-me__prof {
+    font-size: 12px;
+    line-height: 18px;
   }
 
   .about-me__subtitle {
@@ -107,6 +112,7 @@
     margin: 22px 50px 87px 0;
     font-size: 12px;
     line-height: 18px;
+    width: 364px;
   }
 
   .about-me__right-column {
@@ -115,6 +121,7 @@
 
   .about-me__photo {
     width: 255px;
+    height: 307px;
   }
 
 }

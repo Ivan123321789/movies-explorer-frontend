@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1246px) {
+@media screen and (max-width: 1205px) {
   .movies__items {
     /* padding-right: 30px;
     padding-left: 30px; */
@@ -19,12 +19,13 @@
 
 @media screen and (max-width: 1180px) {
   .movies__items {
-    max-width: 800px;
+    max-width: 710px;
+    justify-content: flex-start;
   }
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 767px) {
   .movies__items {
-    max-width: 320px;
+    max-width: 300px;
   }
 }

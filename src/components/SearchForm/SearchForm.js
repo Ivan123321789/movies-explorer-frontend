@@ -16,7 +16,7 @@ function SearchForm() {
                 </div>
                 <Checkbox /> 
             </form>
-            {/* <div className='search-form__underline'></div> */}
+            <div className='search-form__underline'></div>
         </>
     )
 }

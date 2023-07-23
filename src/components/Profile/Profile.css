@@ -169,7 +169,11 @@
   }
 
   .profile__title {
-    padding-bottom: 80px;
+    padding-bottom: 62px;
+  }
+
+  .profile__label:nth-child(2) {
+    padding-bottom: 143px;
   }
 }
 

@@ -213,6 +213,14 @@
   .authform {
     padding: 232px 0;
   }
+
+  .authform__form-submit {
+    top: 714px;
+  }
+
+  .authform__sign {
+    top: 775px;
+  }
 }
 
 @media screen and (max-width: 500px) {
