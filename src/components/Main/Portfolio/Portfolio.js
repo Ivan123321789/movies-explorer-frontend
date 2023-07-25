@@ -1,6 +1,5 @@
 import React from "react";
 import "./Portfolio.css";
-import arrow from '../../../images/row.svg';
 
 function Portfolio() {
   return (
@@ -17,13 +16,7 @@ function Portfolio() {
             <div className="portfolio__link">
               Статичный сайт           
             </div>
-            <div className="portfolio__arrow">
-              <img 
-                className="portfolio__arrow-pic"
-                src={arrow} 
-                alt="стрелка-ссылка на проект" 
-              />
-            </div>
+            <div className="portfolio__arrow"></div>
           </a>
         </li>
         <li className="portfolio__list-element">
@@ -36,13 +29,7 @@ function Portfolio() {
             <div className="portfolio__link">
               Адаптивный сайт
             </div>
-            <div className="portfolio__arrow">
-              <img 
-                className="portfolio__arrow-pic"
-                src={arrow} 
-                alt="стрелка-ссылка на проект" 
-              />
-            </div>
+            <div className="portfolio__arrow"></div>
           </a>
         </li>
         <li className="portfolio__list-element">
@@ -56,11 +43,6 @@ function Portfolio() {
               Одностраничное приложение
             </div>
             <div className="portfolio__arrow">           
-              <img 
-                className="portfolio__arrow-pic"
-                src={arrow} 
-                alt="стрелка-ссылка на проект" 
-              />
             </div>                
           </a>
         </li>

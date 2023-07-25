@@ -179,7 +179,7 @@
 
 @media screen and (max-width: 520px) {
   .profile__container {
-    padding: 70px 0 40px;
+    padding: 71px 0 40px;
   }
 
   .profile__title {
@@ -197,19 +197,23 @@
   }
 
   .profile__label:nth-child(2) {
-    padding-bottom: 249px;
+    padding-bottom: 308px;
   }
 
   .profile__edit-input {
-    width: 200px;
+    width: 220px;
   }
 
   .profile__button {
     width: 260px;
+    font-size: 12px;
+    line-height: 14.52px;
   }
 
   .profile__link {
     width: 260px;
+    font-size: 12px;
+    line-height: 14.52px;
   }
 
   .profile__button-save {

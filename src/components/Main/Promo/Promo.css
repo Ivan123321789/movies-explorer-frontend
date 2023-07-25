@@ -20,7 +20,7 @@
   text-align: center;
   max-width: 730px;
   margin: 0 auto;
-  padding-top: 160px;
+  padding-top: 158px;
   padding-bottom: 151px;
 }
 
@@ -68,7 +68,8 @@
     width: calc(100% - 28px);
     min-height: 586px;
     gap: 212px;
-    padding-bottom: 17px;
+    padding-bottom: 0;
+    margin-top: 12px;
   }
 
   .promo__title {

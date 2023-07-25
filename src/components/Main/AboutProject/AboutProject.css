@@ -69,7 +69,7 @@
 
 .about-project__backend-field {
   background: #2be080;
-  height: 25px;
+  height: 27px;
   padding-top: 9px;
   text-align: center;
   margin: 0;
@@ -134,11 +134,12 @@
 
 @media screen and (max-width: 540px) {
   .about-project {
-    padding: 70px 18px;
+    padding: 72px 18px 70px;
   }
 
   .about-project__container {
     flex-wrap: wrap;
+    margin-top: 62px;
   }
 
   .about-project__backend {
@@ -149,10 +150,16 @@
     width: 65%;
   }
 
-  .about-project__title {
+  .about-project__info-title {
     font-size: 18px;
     line-height: 21.78px;
-    margin-bottom: 28px;
+  }
+
+  .about-project__title {
+    font-size: 18px;
+    padding-bottom: 26px;
+    line-height: 21.78px;
+    margin-bottom: 20px;
   }
 
   .about-project__info:first-child {

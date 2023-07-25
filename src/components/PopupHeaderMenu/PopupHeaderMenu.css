@@ -111,6 +111,14 @@
   }
 
   .popup__akkaunt {
-    margin-top: 444px;
+    margin-top: 437px;
+  }
+
+  .popup__close {
+    top: 14px;
+  }
+
+  .popup__container {
+    width: 100%;
   }
 }

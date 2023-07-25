@@ -149,15 +149,18 @@
     font-size: 18px;
     line-height: 22px;
     padding-bottom: 28px;
+    letter-spacing: -.8px;
   }
 
   .techs__container {
-    padding-top: 60px;
+    margin-top: 60px;
+
   }
 
   .techs__subtitle {
     font-size: 30px;
     line-height: 36px;
+    letter-spacing: -1.2px;
   }
 
   .techs__text {

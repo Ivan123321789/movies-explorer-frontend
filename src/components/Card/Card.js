@@ -3,7 +3,7 @@ import './Card.css';
 
 function Card({title, duration, picture}) {
   return (
-    <div className="card">
+    <li className="card">
       <div className='card__container'>
         <div className="card__description">
           <h3 className="card__title">{title}</h3> 
@@ -16,7 +16,7 @@ function Card({title, duration, picture}) {
         alt={`постер к фильму ${title}`} 
         className="card__image" 
       />
-    </div>
+    </li>
   );
 }
 

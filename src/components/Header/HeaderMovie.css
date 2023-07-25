@@ -125,4 +125,12 @@
   .header-movie {
     width: calc(100% - 28px);
   }
+
+  .header-movie__burger {
+    width: 40px;
+    height: 43px;
+    background-image: url(../../images/burger-small.svg);
+  }
+
+
 }

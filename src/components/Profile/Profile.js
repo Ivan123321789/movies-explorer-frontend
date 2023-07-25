@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import HeaderMovie from '../Header/HeaderMovie';
 import useValidation from '../../hooks/useValidation';
 import './Profile.css';
+import { Link } from 'react-router-dom';
 
 function Profile({onBurgerClick, resetMessage}) {
   const { values, errors, isValid, handleChange, setValues} = useValidation();
@@ -58,9 +59,11 @@ function Profile({onBurgerClick, resetMessage}) {
             <button type="button" className="profile__button" >
                   Редактировать
             </button>
-            <button type="button" className="profile__link">
-              Выйти из аккаунта
-            </button>
+            <Link to="/">
+              <button type="button" className="profile__link">
+                Выйти из аккаунта
+              </button>
+            </Link>
             <button 
               type="submit"
               className={buttonProfileClassName}>Сохранить</button>

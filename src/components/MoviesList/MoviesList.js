@@ -7,7 +7,7 @@ import film2 from '../../images/film2.png';
 function MoviesList() {
   return (
     <>
-      <div className='movies__items'>
+      <ul className='movies__items'>
         <Card
         title='Короткое название'
         duration='1ч 42мин'
@@ -56,7 +56,7 @@ function MoviesList() {
         title='Длинное название фильма которое надо спрятать'
         duration='40 мин'
         picture={film2} />
-      </div>
+      </ul>
     </>
 );
 }

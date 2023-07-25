@@ -44,17 +44,18 @@
 
 @media screen and (max-width: 500px) {
   .header__nav-main {
-    width: 150px;
+    width: 132px;
   }
 
   .header__nav-reg {
+    width: 64px;
     font-size: 10px;
     line-height: 16px;
     padding-right: 14px;
   }
 
   .header__nav-in {
-    width: 53px;
+    width: 54px;
     height: 26px;
     font-size: 10px;
     line-height: 16px;

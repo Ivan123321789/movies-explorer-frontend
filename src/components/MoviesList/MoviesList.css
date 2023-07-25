@@ -7,6 +7,7 @@
   justify-content: center;
   padding: 70px 0 30px;
   margin: 0 auto;
+  list-style: none;
 }
 
 @media screen and (max-width: 1205px) {
@@ -27,5 +28,12 @@
 @media screen and (max-width: 767px) {
   .movies__items {
     max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .movies__items {
+    padding-top: 40px;
+    padding-bottom: 65px;
   }
 }

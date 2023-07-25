@@ -34,6 +34,8 @@
 
 @media screen and (max-width: 460px) {
   .header {
-    padding: 18px 14px;
+    width: calc(100% - 28px);
+    padding: 17px 14px;
+    margin: 0;
   }
 }
