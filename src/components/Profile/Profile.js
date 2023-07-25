@@ -22,9 +22,9 @@ function Profile({onBurgerClick, resetMessage}) {
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
       <main className='profile__container'>
-        <h3 className='profile__title'>
+        <h1 className='profile__title'>
           Привет, {values.name}!
-        </h3>
+        </h1>
         <form className='profile__form'>
           <fieldset className='profile__fieldset'>
             <label className="profile__label" htmlFor="name">Имя

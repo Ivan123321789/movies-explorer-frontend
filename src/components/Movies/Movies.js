@@ -11,10 +11,12 @@ function Movies({onBurgerClick}) {
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
-      <SearchForm />
-      {/* <Preloader /> */}
-      <MoviesList />
-      <MoreFilmsButton />
+      <main>
+        <SearchForm />
+        {/* <Preloader /> */}
+        <MoviesList />
+        <MoreFilmsButton />
+      </main>
       <Footer />
     </>
   );

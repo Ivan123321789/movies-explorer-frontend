@@ -18,7 +18,7 @@ function HeaderMovie({onBurgerClick}) {
         <NavLink to='/saved-movies' className={({isActive}) => `header-movie__link ${isActive ? 'header-movie__link_active' : ''}`}>Сохраненные фильмы</NavLink> 
       </div>
       <Link to='/profile' className='header-movie__nav-akkaunt'>Аккаунт</Link>
-      <button className='header-movie__burger' onClick={onBurgerClick} ></button>
+      <button type='button' className='header-movie__burger' onClick={onBurgerClick} ></button>
     </header>
   );
 }

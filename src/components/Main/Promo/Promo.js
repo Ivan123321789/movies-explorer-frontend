@@ -10,17 +10,17 @@ function Promo() {
         </h1>
         <nav className='promo__nav'> 
           <a href='#about-project'>
-            <button className='promo__btn'>
+            <button type="button" className='promo__btn'>
               О проекте  
             </button>
           </a>
           <a href='#techs'>
-            <button className='promo__btn'>
+            <button type="button" className='promo__btn'>
               Технологии  
             </button>
           </a>
           <a href='#about-me'>
-            <button className='promo__btn'>
+            <button type="button" className='promo__btn'>
               Студент  
             </button>
           </a>  

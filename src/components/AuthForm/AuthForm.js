@@ -15,7 +15,7 @@ function AuthForm({isValid, title, name, message, textButton, route, subtitle, g
           className='authform__logo'
         />
       </Link>
-      <h3 className="authform__title">{title}</h3>
+      <h1 className="authform__title">{title}</h1>
       <form className="authform__form " name={`form-${name}`}>
         <fieldset className='authform__form-fieldset'>
           

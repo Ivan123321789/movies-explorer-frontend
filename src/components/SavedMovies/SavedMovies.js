@@ -10,9 +10,11 @@ function SavedMovies({onBurgerClick}) {
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
-      <SearchForm />
-      {/* <Preloader /> */}
-      <MoviesList2 />
+      <main>
+        <SearchForm />
+        {/* <Preloader /> */}
+        <MoviesList2 />
+      </main>
       <FooterSaved />
     </>
   );
