@@ -13,7 +13,9 @@ function SavedMovies({onBurgerClick}) {
       <main>
         <SearchForm />
         {/* <Preloader /> */}
-        <MoviesList2 />
+        <section className='movies'>
+          <MoviesList2 />
+        </section>
       </main>
       <FooterSaved />
     </>

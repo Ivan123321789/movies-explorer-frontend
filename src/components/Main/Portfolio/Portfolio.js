@@ -13,9 +13,9 @@ function Portfolio() {
             className="portfolio__row"
             rel='noreferrer'
           >
-            <div className="portfolio__link">
+            <p className="portfolio__link">
               Статичный сайт           
-            </div>
+            </p>
             <div className="portfolio__arrow"></div>
           </a>
         </li>
@@ -26,9 +26,9 @@ function Portfolio() {
             target="_blank"
             rel='noreferrer'
           >
-            <div className="portfolio__link">
+            <p className="portfolio__link">
               Адаптивный сайт
-            </div>
+            </p>
             <div className="portfolio__arrow"></div>
           </a>
         </li>
@@ -39,9 +39,9 @@ function Portfolio() {
             target="_blank"
             rel='noreferrer'
             >
-            <div className="portfolio__link">
+            <p className="portfolio__link">
               Одностраничное приложение
-            </div>
+            </p>
             <div className="portfolio__arrow">           
             </div>                
           </a>

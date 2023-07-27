@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.header-movie__link {
+.header-movie__nav-link {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -19,11 +19,11 @@
   color: #000000;
 }
 
-.header-movie__link:hover {
+.header-movie__nav-link:hover {
   opacity: .8;
 }
 
-.header-movie__link_active {
+.header-movie__nav-link_active {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 13px;
@@ -112,7 +112,7 @@
     display: block;
   }
 
-  .header-movie__link {
+  .header-movie__nav-link {
     display: none;
   }
 

@@ -11,11 +11,13 @@ function Movies({onBurgerClick}) {
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
-      <main>
+      <main >
         <SearchForm />
         {/* <Preloader /> */}
-        <MoviesList />
-        <MoreFilmsButton />
+        <section className='movies'>
+          <MoviesList />
+          <MoreFilmsButton />
+        </section>
       </main>
       <Footer />
     </>

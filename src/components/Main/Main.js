@@ -5,19 +5,19 @@ import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
 import Header from '../Header/Header';
-import HeaderMovie from "../Header/HeaderMovie";
 import Footer from '../Footer/Footer';
 
-function Main({onBurgerClick}) {
+function Main() {
   return (
     <>
       <Header />
-      {/* <HeaderMovie onBurgerClick={onBurgerClick}/> */}
-      <Promo />
-      <AboutProject />
-      <Techs />
-      <AboutMe />
-      <Portfolio />
+      <main>
+        <Promo />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
       <Footer />
     </>
   );

@@ -105,6 +105,12 @@
   padding-bottom: 0;
 }
 
+.authform__form-input:focus {
+  outline: none;
+  background: #fff;
+  border: 1px solid #2BE080;
+}
+
 .authform__form-input_true {
   color: #000;
   border-bottom: 1px solid #2BE080;
@@ -285,6 +291,7 @@
   }
 
   .authform__sign {
+    width: 280px;
     top: 735px;
   }
 

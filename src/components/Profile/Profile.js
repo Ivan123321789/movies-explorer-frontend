@@ -21,54 +21,58 @@ function Profile({onBurgerClick, resetMessage}) {
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
-      <main className='profile__container'>
-        <h1 className='profile__title'>
-          Привет, {values.name}!
-        </h1>
-        <form className='profile__form'>
-          <fieldset className='profile__fieldset'>
-            <label className="profile__label" htmlFor="name">Имя
-              <input
-                className="profile__edit-input"
-                name="name"
-                type="text"
-                id="name"
-                minLength="2"
-                maxLength="30"
-                value={values.name}
-                onChange={onChange}
-                required
-              />
-              <span className="profile__input-error">{errors.name || ''}</span>
-            </label>
-            <label className="profile__label" htmlFor="email">E-mail
-              <input
-                className="profile__edit-input"
-                name="email"
-                type="email"
-                id="email"
-                value={values.email}
-                onChange={onChange}
-                required
-              />
-              <span className="profile__input-error">{errors.email || ''}</span>
-            </label>
-          </fieldset>
-          <span className="profile__span-error">При обновлении профиля произошла ошибка</span>
-          <div className="profile__submit-container">
-            <button type="button" className="profile__button" >
-                  Редактировать
-            </button>
-            <Link to="/">
-              <button type="button" className="profile__link">
-                Выйти из аккаунта
+      <main>
+        <section className='profile'>
+          <h1 className='profile__title'>
+            Привет, {values.name}!
+          </h1>
+          <form className='profile__form'>
+            <fieldset className='profile__fieldset'>
+              <label className="profile__label" htmlFor="name">Имя
+                <input
+                  className="profile__edit-input"
+                  name="name"
+                  type="text"
+                  id="name"
+                  minLength="2"
+                  maxLength="30"
+                  value={values.name ?? ''}
+                  onChange={onChange}
+                  placeholder='Имя'
+                  required
+                />
+                <span className="profile__input-error">{errors.name || ''}</span>
+              </label>
+              <label className="profile__label" htmlFor="email">E-mail
+                <input
+                  className="profile__edit-input"
+                  name="email"
+                  type="email"
+                  id="email"
+                  value={values.email ?? ''}
+                  onChange={onChange}
+                  placeholder='email'
+                  required
+                />
+                <span className="profile__input-error">{errors.email || ''}</span>
+              </label>
+            </fieldset>
+            <span className="profile__span-error">При обновлении профиля произошла ошибка</span>
+            <div className="profile__submit-container">
+              <button type="button" className="profile__button" >
+                    Редактировать
               </button>
-            </Link>
-            <button 
-              type="submit"
-              className={buttonProfileClassName}>Сохранить</button>
-          </div>   
-        </form>  
+              <Link to="/">
+                <button type="button" className="profile__link">
+                  Выйти из аккаунта
+                </button>
+              </Link>
+              <button 
+                type="submit"
+                className={buttonProfileClassName}>Сохранить</button>
+            </div>   
+          </form>  
+        </section>
       </main>
     </>
   );

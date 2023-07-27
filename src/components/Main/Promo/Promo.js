@@ -8,22 +8,18 @@ function Promo() {
         <h1 className='promo__title'>
           Учебный проект студента факультета Веб-разработки.
         </h1>
-        <nav className='promo__nav'> 
-          <a href='#about-project'>
-            <button type="button" className='promo__btn'>
-              О проекте  
-            </button>
-          </a>
-          <a href='#techs'>
-            <button type="button" className='promo__btn'>
-              Технологии  
-            </button>
-          </a>
-          <a href='#about-me'>
-            <button type="button" className='promo__btn'>
-              Студент  
-            </button>
-          </a>  
+        <nav className='promo__nav '>
+          <ul className='promo__nav-list promo-list'>
+            <li>
+              <a href='#about-project' className='promo__btn'>О проекте</a>
+            </li>
+            <li>
+              <a href='#techs' className='promo__btn'>Технологии</a>
+            </li>
+            <li>
+              <a href='#about-me'className='promo__btn'>Студент</a>  
+            </li>
+          </ul> 
         </nav>
       </div>
     </section>

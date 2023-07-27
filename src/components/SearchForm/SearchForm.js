@@ -4,8 +4,8 @@ import './SearchForm.css';
 
 function SearchForm() {
     return (
-        <section>
-            <form className='search-form'>
+        <section className='search'>
+            <form className='search__form search-form'>
                 <div className='search-form__input-block'>
                     <div className='search-form__img'></div>
                     <input type='search' 
@@ -16,7 +16,7 @@ function SearchForm() {
                 </div>
                 <Checkbox /> 
             </form>
-            <div className='search-form__underline'></div>
+            <div className='search__underline'></div>
         </section>
     )
 }

@@ -27,7 +27,7 @@ function Register({resetMessage}) {
       subtitle='Уже зарегистрированы?'
       go='Войти'
     >
-      <label className="authform__form-label" htmlFor='username'>Имя
+      <label className="authform__form-label" htmlFor='name'>Имя
         <input
           required
           type='text'
@@ -67,6 +67,7 @@ function Register({resetMessage}) {
           errors.password === '' ? "authform__form-input_true" : "authform__form-input_false"}`}
           placeholder='Пароль'
           minLength='8'
+          maxLength='30'
           value={values.password || ""}
           onChange={onChange}
         />

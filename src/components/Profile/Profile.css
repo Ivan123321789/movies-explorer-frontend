@@ -1,4 +1,4 @@
-.profile__container {
+.profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,6 +63,12 @@
   background-color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.profile__edit-input:focus {
+  outline: none;
+  background: #fff;
+  border: 1px solid #2BE080;
 }
 
 .profile__input-error {
@@ -164,7 +170,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .profile__container {
+  .profile {
     padding: 236px 0 269px;
   }
 
@@ -178,7 +184,7 @@
 }
 
 @media screen and (max-width: 520px) {
-  .profile__container {
+  .profile {
     padding: 71px 0 40px;
   }
 

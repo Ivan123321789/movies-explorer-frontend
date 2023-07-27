@@ -9,7 +9,7 @@
   justify-content: space-between;
 }
 
-.search-form__underline {
+.search__underline {
   width: 1140px;
   margin: 0 auto 10px;
   border-bottom: 1px solid #e8e8e8;
@@ -82,7 +82,7 @@
     margin: 70px;
   }
 
-  .search-form__underline {
+  .search__underline {
     width: calc(100% - 140px);
     max-width: 1140px;
   }
@@ -94,7 +94,7 @@
     margin: 80px 30px 109px;
   }
 
-  .search-form__underline {
+  .search__underline {
     width: calc(100% - 60px);
   }
 
@@ -115,7 +115,7 @@
     height: 136px;
   }
 
-  .search-form__underline {
+  .search__underline {
     width: calc(100% - 20px);
   }
 

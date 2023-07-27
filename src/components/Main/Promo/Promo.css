@@ -26,12 +26,21 @@
 
 .promo__nav {
   width: 306px;
-  display: flex;
-  justify-content: space-between;
   margin: 0 auto;
 }
 
+.promo__nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+}
+
 .promo__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   width: 96px;
   height: 36px;
   border-radius: 10px;
@@ -43,6 +52,11 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+  cursor: pointer;
+}
+
+.promo__btn:hover {
+  opacity: .7;
 }
 
 @media screen and (max-width: 768px) {
