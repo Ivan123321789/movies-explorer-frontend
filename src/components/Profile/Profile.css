@@ -106,15 +106,19 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-  align-items: center;
-  text-align: center;
   background-color: #fff;
   color: #EE3465;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
   width: 410px;
   margin: 0 auto;
   border: none;
   cursor: pointer;
+}
+
+.profile__link:hover {
+  opacity: .7;
 }
 
 .profile__span {
@@ -149,6 +153,7 @@
   height: 45px;
   border-radius: 3px;
   border: none;
+  cursor: pointer;
 }
 
 .profile__button-save:hover {

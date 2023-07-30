@@ -51,6 +51,7 @@ function Login({resetMessage}) {
           errors.password === '' ? "authform__form-input_true" : "authform__form-input_false"}`}
           placeholder='Пароль'
           minLength='8'
+          maxLength='30'
           value={values.password || ""}
           onChange={onChange}
         />

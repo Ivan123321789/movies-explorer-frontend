@@ -62,10 +62,10 @@ function Profile({onBurgerClick, resetMessage}) {
               <button type="button" className="profile__button" >
                     Редактировать
               </button>
-              <Link to="/">
-                <button type="button" className="profile__link">
+              <Link to="/" className="profile__link">
+                {/* <button type="button" className="profile__link"> */}
                   Выйти из аккаунта
-                </button>
+                {/* </button> */}
               </Link>
               <button 
                 type="submit"

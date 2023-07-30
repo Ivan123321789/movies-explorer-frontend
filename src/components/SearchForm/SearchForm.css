@@ -38,10 +38,11 @@
   border: none;
   margin: 19px 30px 0 0;
   padding: 0;
+  cursor: pointer;
 }
 
 .search-form__button:hover {
-  cursor: pointer;
+  opacity: .8;
 }
 
 .search-form__input-block {

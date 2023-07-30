@@ -36,6 +36,10 @@
   cursor: pointer;
 }
 
+.popup__close:hover {
+  opacity: .7;
+}
+
 .popup__container {
   background-color: #ffffff;
   width: 520px;
@@ -70,6 +74,10 @@
   cursor: pointer;
 }
 
+.popup__link:hover {
+  opacity: .7;
+}
+
 .popup__link:last-child {
   margin-bottom: 0;
 }
@@ -95,6 +103,11 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.popup__akkaunt:hover {
+  opacity: .8;
 }
 
 @media screen and (max-width: 520px) {

@@ -20,7 +20,7 @@
 }
 
 .header-movie__nav-link:hover {
-  opacity: .8;
+  opacity: .7;
 }
 
 .header-movie__nav-link_active {
@@ -48,7 +48,7 @@
 }
 
 .header-movie__burger:hover {
-  opacity: .8;
+  opacity: .7;
 }
 
 .header-movie__logo-link {

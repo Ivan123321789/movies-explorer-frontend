@@ -1,9 +1,6 @@
 .authform {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   width: 396px;
-  padding: 70px 0;
+  padding: 70px 0 70px;
   margin: 0 auto;
 }
 
@@ -11,6 +8,11 @@
   width: 38px;
   height: 38px;
   padding-bottom: 36px;
+  cursor: pointer;
+}
+
+.authform__logo:hover {
+  opacity: .8;
 }
 
 .authform__title {
@@ -26,14 +28,9 @@
 }
 
 .authform__sign {
-  position: absolute;
-  top: 613px;
   width: 396px;
-  /* left: 50%;
-  right: 50%; */
   display: flex;
   justify-content: center;
-  margin: 0 auto;
 }
 
 .authform__subtitle {
@@ -57,6 +54,7 @@
   text-align: center;
   color: #2BE080;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .authform__link:hover {
@@ -67,6 +65,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 380px;
   margin-bottom: 16px;
 }
 
@@ -89,12 +89,8 @@
   padding-bottom: 10px;
   width: 396px;
   height: 17px;
-  /* margin: 5px 0 6px; */
   margin: 5px 0 3px;
   background: #FFFFFF;
-  border-radius: 8px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -149,7 +145,6 @@
   margin: 0 0 0 0;
   box-sizing: border-box;
   height: 20px;
-  /* padding-bottom: 12px; */
 }
 
 .authform__form-fieldset {
@@ -160,7 +155,6 @@
 }
 
 .authform__form-message {
-  margin: 164px 0 20px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 11px;
@@ -178,8 +172,6 @@
 }
 
 .authform__form-submit {
-  position: absolute;
-  top: 552px;
   width: 396px;
   height: 45px;
   margin: 0;
@@ -220,17 +212,12 @@
     padding: 232px 0;
   }
 
-  .authform__form-submit {
-    top: 714px;
-  }
-
-  .authform__sign {
-    top: 775px;
-  }
 }
 
 @media screen and (max-width: 500px) {
   .authform {
+    display: flex;
+    flex-direction: column;
     width: 260px;
     padding: 56px 0 30px;
     align-items: center;
@@ -238,15 +225,18 @@
 
   .authform__logo {
     padding-bottom: 46px;
+    margin: 0 auto;
   }
 
   .authform__title {
     padding-bottom: 79px;
+    margin: 0 auto;
   }
 
   .authform__form {
-    display: block;
     width: 260px;
+    height: 469px;
+    margin-bottom: 14px;
   }
 
   .authform__form-input {
@@ -263,7 +253,6 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-    top: 676px;
   }
 
   .authform__subtitle {
@@ -292,7 +281,6 @@
 
   .authform__sign {
     width: 280px;
-    top: 735px;
   }
 
 }

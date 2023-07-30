@@ -18,13 +18,15 @@ function AuthForm({isValid, title, name, message, textButton, route, subtitle, g
         </Link>
         <h1 className="authform__title">{title}</h1>
         <form className="authform__form " name={`form-${name}`}>
-          <fieldset className='authform__form-fieldset'>
-            
-            {children}
+          <div>
+            <fieldset className='authform__form-fieldset'>
+              
+              {children}
 
-          </fieldset>
-          <p className={authformMessageClassName} >{message}</p>
-          <Link className="authform__form-link " to="/movies" >
+            </fieldset>
+          </div>
+          <div>
+            <p className={authformMessageClassName} >{message}</p>
             <button
               className={authformButtonClassName}
               type="submit"
@@ -32,7 +34,7 @@ function AuthForm({isValid, title, name, message, textButton, route, subtitle, g
               >
                 {textButton}
             </button>
-          </Link>
+          </div>
         </form>
         <div className="authform__sign">
           <p className="authform__subtitle">{subtitle}</p>
