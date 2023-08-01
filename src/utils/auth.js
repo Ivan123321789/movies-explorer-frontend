@@ -1,5 +1,4 @@
-// export const BASE_URL = 'https://auth.nomoreparties.co';
-export const BASE_URL = 'https://api.ivan.nomoreparties.sbs';
+export const BASE_URL = 'https://api.ivandiplom.nomoreparties.sbs';
 // export const BASE_URL = 'http://localhost:3333';
 
   const getResponse = (res) => {
