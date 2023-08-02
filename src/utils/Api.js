@@ -19,17 +19,9 @@ class Api {
       if (res.ok) {
         return res.json();
       }
-      return Promise.reject(`Ошибка: ${res.status}`);
+      // return Promise.reject(`Ошибка: ${res.status}`);
+      return Promise.reject(res.status);
   };
-
-  // Получение списка всех карточек в виде массива 
-  getCards() {
-    return fetch(`${this._url}/cards`, {
-      method: 'GET',
-      headers: this._headers
-    })
-    .then(this._checkServerResponse)
-  }
 
   // Загрузка информации о пользователе с сервера
   getUser() {
@@ -40,28 +32,6 @@ class Api {
     .then(this._checkServerResponse)
   } 
 
-  // Добавление карточки
-  postCard(data) {
-    return fetch(`${this._url}/cards`, {
-        method: 'POST',
-        headers: this._headers,
-        body: JSON.stringify({
-          name: data.name,
-          link: data.link
-        })
-    })
-    .then(this._checkServerResponse)
-  }
-
-  // Удаление карточки 
-  deleteCardApi(_id) {
-    return fetch(`${this._url}/cards/${_id}`, {
-        method: 'DELETE',
-        headers: this._headers,
-    })
-    .then(this._checkServerResponse)
-  }
-
   // Замена данных пользователя 
   changeProfile(data) {
     console.log(data);
@@ -70,63 +40,57 @@ class Api {
         headers: this._headers,
         body: JSON.stringify({
           name: data.name,
-          about: data.about
+          email: data.email
         }) 
     })
     .then(this._checkServerResponse)
   }
 
-  // Замена аватара 
-  changeAvatar(data) {
-    // console.log(data);
-    return fetch(`${this._url}/users/me/avatar`, {
-        method: 'PATCH',
-        headers: this._headers,
-        body: JSON.stringify({
-          avatar: data.avatar}) 
+   // Получение фильмов 
+   getUserMovies() {
+    return fetch(`${this._url}/movies`, {
+      method: 'GET',
+      headers: this._headers
     })
     .then(this._checkServerResponse)
   }
 
-  // Добавление лайка карточке
-  addLike(_id) {
-    return fetch(`${this._url}/cards/${_id}/likes`, {
-        method: 'PUT',
+  // Добавление фильма
+  postMovie(data) {
+    return fetch(`${this._url}/movies`, {
+        method: 'POST',
         headers: this._headers,
+        body: JSON.stringify({
+          country: data.country,
+          director: data.director,
+          duration: data.duration,
+          year: data.year,
+          description: data.description,
+          image: `https://api.nomoreparties.co${data.image.url}`,
+          trailerLink: data.trailerLink,
+          thumbnail: `https://api.nomoreparties.co${data.image.formats.thumbnail.url}`,
+          movieId: data.id.toString(),
+          nameRU: data.nameRU,
+          nameEN: data.nameEN,
+        })
     })
     .then(this._checkServerResponse)
   }
-  // Удаление лайка карточки 
-  deleteLike(_id) {
-    return fetch(`${this._url}/cards/${_id}/likes`, {
+
+  // Удаление фильма 
+  deleteMovie(id) {
+    return fetch(`${this._url}/movies/${id}`, {
         method: 'DELETE',
         headers: this._headers,
     })
     .then(this._checkServerResponse)
   }
 
-  // Смена активности лайка
-  changeLikeCardStatus(_id, isLiked) {
-    if (isLiked) {
-      return this.addLike(_id);
-    } else {
-      return this.deleteLike(_id);
-    }
-  }
-
-  // Общий промис для отрисовки страницы
-  getPromiseAll() {
-    return Promise.all([
-      this.getCards(),
-      this.getUser()
-    ])
-  }
 }
-let token = localStorage.getItem("jwt");
+let token = localStorage.getItem("token");
 export const api = new Api({
-  // url: 'https://mesto.nomoreparties.co/v1/cohort-61',
-  // url: 'http://localhost:3333',
-  url: 'https://api.ivan.nomoreparties.sbs',
+  url: 'http://localhost:3333',
+  // url: 'https://api.ivandiplom.nomoreparties.sbs',
   headers: {
     authorization:  `Bearer ${token}`,
     'content-type': 'application/json'

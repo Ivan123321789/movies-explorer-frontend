@@ -1,0 +1,1 @@
+export const profileIsUpdate = 'Данные профиля успешно обновлены';

@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://api.ivandiplom.nomoreparties.sbs';
-// export const BASE_URL = 'http://localhost:3333';
+// export const BASE_URL = 'https://api.ivandiplom.nomoreparties.sbs';
+export const BASE_URL = 'http://localhost:3333';
 
   const getResponse = (res) => {
     if (res.ok) {
@@ -9,24 +9,24 @@ export const BASE_URL = 'https://api.ivandiplom.nomoreparties.sbs';
   }
     
 
-export const register = ({password, email}) => {
+export const register = ({name, email, password}) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({password, email})
+    body: JSON.stringify({name, email, password})
   })
   .then(getResponse);
 }; 
 
-export const authorize = ({password, email}) => {
+export const authorize = ({email, password}) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({password, email})
+    body: JSON.stringify({email, password})
   })
   .then(getResponse)
 }; 

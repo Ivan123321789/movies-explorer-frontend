@@ -3,7 +3,6 @@ import './SavedMovies.css';
 import HeaderMovie from '../Header/HeaderMovie';
 import SearchForm from '../SearchForm/SearchForm';
 import Preloader from '../Preloader/Preloader';
-import MoviesList2 from '../MoviesList/MovieList2';
 import FooterSaved from '../Footer/FooterSaved';
 
 function SavedMovies({onBurgerClick}) {
@@ -14,7 +13,7 @@ function SavedMovies({onBurgerClick}) {
         <SearchForm />
         {/* <Preloader /> */}
         <section className='movies'>
-          <MoviesList2 />
+          <p>Тут будут сохраненные фильмы</p>
         </section>
       </main>
       <FooterSaved />

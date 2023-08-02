@@ -8,10 +8,10 @@ import Header from '../Header/Header';
 import HeaderMovie from "../Header/HeaderMovie";
 import Footer from '../Footer/Footer';
 
-function Main({loggedIn}) {
+function Main({isLoggedIn}) {
   return (
     <>
-      { loggedIn ? (<HeaderMovie />) : (<Header />)}
+      { isLoggedIn ? (<HeaderMovie />) : (<Header />)}
       <main>
         <Promo />
         <AboutProject />

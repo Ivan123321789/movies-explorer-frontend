@@ -7,7 +7,7 @@ import MoviesList from '../MoviesList/MoviesList';
 import MoreFilmsButton from '../MoreFilmsButton/MoreFilmsButton';
 import Footer from '../Footer/Footer';
 
-function Movies({onBurgerClick}) {
+function Movies({onBurgerClick, movies}) {
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
@@ -15,7 +15,7 @@ function Movies({onBurgerClick}) {
         <SearchForm />
         {/* <Preloader /> */}
         <section className='movies'>
-          <MoviesList />
+          <MoviesList movies={movies}/>
           <MoreFilmsButton />
         </section>
       </main>

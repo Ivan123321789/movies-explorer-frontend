@@ -30,18 +30,19 @@
   color: #000000;
 }
 
-.page-nf__link {
+.page-nf__button {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
+  background-color: #fff;
   color: #2be080;
-  text-decoration: none;
+  border: none;
   cursor: pointer;
 }
 
-.page-nf__link:hover {
+.page-nf__button:hover {
   opacity: .7;
 }
 
@@ -71,7 +72,7 @@
     padding-bottom: 284px;
   }
 
-  .page-nf__link {
+  .page-nf__button {
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
