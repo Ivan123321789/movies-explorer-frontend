@@ -4,11 +4,12 @@ import HeaderMovie from '../Header/HeaderMovie';
 import useValidation from '../../hooks/useValidation';
 import './Profile.css';
 
-function Profile({message, onUpdateProfile, onBurgerClick, resetMessage, onSignOut}) {
+function Profile({messageBad, messageGood, onUpdateProfile, onBurgerClick, resetMessage, onSignOut}) {
   const currentUser = useContext(CurrentUserContext);
   const { values, errors, isValid, handleChange, setValues, resetForm} = useValidation();
-  const disabledSubmitButton = (!isValid || currentUser.name === values.name || currentUser.email === values.email);
+  const disabledSubmitButton = (!isValid || (currentUser.name === values.name && currentUser.email === values.email));
   const buttonProfileClassName = `${!disabledSubmitButton ? "profile__button-save" : "profile__button-save_inactive" }`;
+  const spanClassName = `${messageGood !== "" ? "profile__span" : ""} ${messageBad !== "" ? "profile__span-error" : ""}}`
   const [isInputDisabled, setIsInputDisabled] = useState(true);
   
   useEffect(() => {
@@ -19,7 +20,6 @@ function Profile({message, onUpdateProfile, onBurgerClick, resetMessage, onSignO
   function onChange(evt) {
     resetMessage();
     handleChange(evt);
-    // handleCheckChanges();
   }
 
   function handleEditProfile() {
@@ -79,7 +79,7 @@ function Profile({message, onUpdateProfile, onBurgerClick, resetMessage, onSignO
                 <span className="profile__input-error">{errors.email || ''}</span>
               </label>
             </fieldset>
-            <span className="profile__span-error">{message}</span>
+            <span className={spanClassName}>{messageBad}{messageGood}</span>
             <div className="profile__submit-container">
               {isInputDisabled ? (
                 <>

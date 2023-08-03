@@ -22,6 +22,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [registerErrorMessage, setRegisterErrorMessage] = useState('');
   const [profileErrorMessage, setProfileErrorMessage] = useState('');
+  const [profileSuccessMessage, setProfileSuccessMessage] = useState('');
   const [isPopupHeaderMenuOpen, setIsPopupHeaderMenuOpen] = useState(false);
   const [isPopupInfoOpen, setIsPopupInfoOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({name: '', email: ''});
@@ -106,7 +107,7 @@ function App() {
     .then((newData) => {
       console.log(newData);
       setCurrentUser({name: newData.user.name, email: newData.user.email});
-      setProfileErrorMessage(success.profileIsUpdate);
+      setProfileSuccessMessage(success.profileIsUpdate);
     })
     .catch((err) => {
       console.log(err);
@@ -116,6 +117,10 @@ function App() {
         setProfileErrorMessage(errors.iHateThisDiploma);
       }
       
+    })
+    .finally(() => {
+      setTimeout(() => setProfileSuccessMessage(''), 3000);
+      setTimeout(() => setProfileErrorMessage(''), 3000);
     })
   }
 
@@ -159,8 +164,9 @@ function App() {
           <Route path="/profile" 
             element={<ProtectedRoute 
               element={Profile} 
-              isLoggedIn={isLoggedIn} 
-              message={profileErrorMessage} 
+              isLoggedIn={isLoggedIn}
+              messageBad={profileErrorMessage}
+              messageGood={profileSuccessMessage} 
               resetMessage={resetMessage}
               onUpdateProfile={handleUpdateProfile}
               onSignOut={handleSignOut}
