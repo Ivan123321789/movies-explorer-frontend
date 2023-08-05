@@ -4,8 +4,9 @@ import HeaderMovie from '../Header/HeaderMovie';
 import SearchForm from '../SearchForm/SearchForm';
 import Preloader from '../Preloader/Preloader';
 import FooterSaved from '../Footer/FooterSaved';
+import MoviesList from '../MoviesList/MoviesList';
 
-function SavedMovies({onBurgerClick}) {
+function SavedMovies({savedMovies, onBurgerClick, onDelete}) {
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
@@ -13,7 +14,7 @@ function SavedMovies({onBurgerClick}) {
         <SearchForm />
         {/* <Preloader /> */}
         <section className='movies'>
-          <p>Тут будут сохраненные фильмы</p>
+          <MoviesList savedMovies={savedMovies} onDelete={onDelete}/>
         </section>
       </main>
       <FooterSaved />

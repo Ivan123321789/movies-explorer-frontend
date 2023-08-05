@@ -29,6 +29,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([]);
+  const [isSaved, setIsSaved] = useState(false);
 
   const navigate = useNavigate();
 
@@ -124,6 +126,36 @@ function App() {
     })
   }
 
+  function handleSaveMovie(movie) {
+    console.log(movie);
+    api.postMovie(movie)
+    .then((newMovie) => {
+      console.log(newMovie);
+      setSavedMovies([newMovie, ...savedMovies]);
+      setIsSaved(true);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+  function handleDeleteMovie(movie) {
+    const deletedMovie = savedMovies.find(item => item.movieId === movie.movieId && item.owner === currentUser._id)
+    console.log(movie);
+    setIsLoading(true);
+    api.deleteMovie(deletedMovie._id)
+    .then((res) => {
+      console.log(res);
+      setSavedMovies(savedMovies.filter((c) => c._id !== deletedMovie._id))
+      setIsSaved(false);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally (() => setIsLoading(false));
+  }
+
+
   useEffect(() => {
       handleCheckToken();
   }, [])
@@ -177,6 +209,9 @@ function App() {
               element={Movies} 
               isLoggedIn={isLoggedIn}
               isLoading={isLoading} 
+              onSave={handleSaveMovie}
+              onDelete={handleDeleteMovie}
+              isSaved={isSaved}
               movies={movies}
               onBurgerClick={handlePopupHeaderMenuClick}/>
             } /> 
@@ -185,6 +220,8 @@ function App() {
               element={SavedMovies} 
               isLoggedIn={isLoggedIn}
               isLoading={isLoading} 
+              savedMovies={savedMovies}
+              onDelete={handleDeleteMovie}
               onBurgerClick={handlePopupHeaderMenuClick}/>
             } />
           <Route path="*" element={<PageNotFound /> } />
