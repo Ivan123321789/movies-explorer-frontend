@@ -1,4 +1,4 @@
-.popup {
+.popup-info {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,12 +13,12 @@
   visibility: hidden;
 }
 
-.popup_opened {
+.popup-info_opened {
   opacity: 1;
   visibility: visible;
 }
 
-.popup__container {
+.popup-info__container {
   position: relative;
   margin: 0 auto;
   width: 430px;
@@ -28,7 +28,7 @@
   border-radius: 10px;
 }
 
-.popup__text {
+.popup-info__text {
   width: 358px;
   margin-top: 60px;
   font-family: 'Inter';
@@ -43,13 +43,13 @@
   color: #000000;
 }
 
-.popup__close-icon {
+.popup-info__close-icon {
   position: absolute;
   top: -40px;
   right: -40px;
   width: 32px;
   height: 32px;
-  background-image: url('../../images/burger-close.svg');
+  background-image: url('../../images/close-popupinfo-icon.svg');
   background-color: rgb(0, 0, 0, 0);
   cursor: pointer;
   background-size: cover;
@@ -57,12 +57,12 @@
   transition: opacity .5s ease-in-out;
 }
 
-.popup__close-icon:hover {
+.popup-info__close-icon:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 767px) {
-  .popup__close-icon {
+  .popup-info__close-icon {
     top: -36px;
     right: 0;
     width: 20px;
@@ -71,12 +71,12 @@
 }
 
 @media screen and (max-width: 620px) {
-  .popup__container {
+  .popup-info__container {
     width: 280px;
     min-height: 308px;
   }
 
-  .popup__text {
+  .popup-info__text {
     width: 244px;
     min-height: 48px;
     padding: 0 18px 40px 18px;

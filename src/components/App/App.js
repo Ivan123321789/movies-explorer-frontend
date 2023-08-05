@@ -54,6 +54,8 @@ function App() {
        api.setToken(res.token);
        localStorage.setItem('token', res.token);
        setIsLoggedIn(true);
+       setIsPopupInfoOpen(true);
+       setRegisterErrorMessage(success.youAreWithUs);
        navigate('/movies');  
      })
     .catch((err) => {
@@ -126,13 +128,20 @@ function App() {
     })
   }
 
+  const checkSaved = (movie) => {
+    if (savedMovies.some((i) => i.movieId === movie.movieId)) {
+      setIsSaved(true)
+    } else {
+      setIsSaved(false)
+    }
+  }
+
   function handleSaveMovie(movie) {
-    console.log(movie);
     api.postMovie(movie)
     .then((newMovie) => {
-      console.log(newMovie);
       setSavedMovies([newMovie, ...savedMovies]);
-      setIsSaved(true);
+      console.log(savedMovies);
+      checkSaved(newMovie);
     })
     .catch((err) => {
       console.log(err);
@@ -210,6 +219,7 @@ function App() {
               isLoggedIn={isLoggedIn}
               isLoading={isLoading} 
               onSave={handleSaveMovie}
+              onCheckSaved={checkSaved}
               onDelete={handleDeleteMovie}
               isSaved={isSaved}
               movies={movies}

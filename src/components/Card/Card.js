@@ -13,12 +13,21 @@ function Card({movie, isSaved, onSave, onDelete}) {
   function handleClickDelete() {
     onDelete(movie._id)
   }
+
+  function movieDuration() {
+    const hour = Math.floor(movie.duration/60);
+    const min = movie.duration - (hour * 60);
+    const time = hour + " ч " + min + " м";
+    return time;
+  }
+
+  const newDuration = movieDuration();
   return (
-    <li className="card">
+    <li className="card" >
       <div className='card__container'>
         <div className="card__description">
           <h3 className="card__title">{movie.nameRU || movie.nameEN}</h3> 
-          <p className='card__duration'>{movie.duration}</p>
+          <p className='card__duration'>{newDuration}</p>
         </div>
         {location.pathname === '/movies' && (
           <button type="button" className={saveButtonClassName} onClick={handleClickSave}/>
@@ -29,14 +38,14 @@ function Card({movie, isSaved, onSave, onDelete}) {
         
       </div>
       <a href={movie.trailerLink} target='_blank' rel='noreferrer'>
-        {location.pathname === 'movies' && (
+        {location.pathname === '/movies' && (
           <img 
           src={`https://api.nomoreparties.co/${movie.image.url}`} 
           alt={`постер к фильму ${movie.nameRU || movie.nameEN}`} 
           className="card__image" 
         />
         )}
-        {location.pathname === 'saved-movies' && (
+        {location.pathname === '/saved-movies' && (
           <img 
           src={movie.image}
           alt={`постер к фильму ${movie.nameRU || movie.nameEN}`} 
