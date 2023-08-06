@@ -11,12 +11,12 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import PopupHeaderMenu from '../PopupHeaderMenu/PopupHeaderMenu';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import PopupInfo from '../PopupInfo/PopupInfo';
 import * as errors from '../../utils/errorMessages';
 import * as success from '../../utils/successMessages';
 import {api} from '../../utils/Api';
 import * as auth from '../../utils/auth';
 import * as apiMovie from '../../utils/apiMovie';
-import PopupInfo from '../PopupInfo/PopupInfo';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -31,6 +31,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
   const [isSaved, setIsSaved] = useState(false);
+  const [searchMovies, setSearchMovies] = useState([]);
 
   const navigate = useNavigate();
 
@@ -136,6 +137,14 @@ function App() {
     }
   }
 
+  function filterMovies(search, isShort, movies) {
+    return movies.filter((movie) => {
+      const searchSymbols = movie.nameRU.toLowerCase().includes(search.toLowerCase());
+      const shortMovie = isShort ? movie.duration <= 40 : true;
+      return searchSymbols && shortMovie;
+    })
+  }
+
   function handleSaveMovie(movie) {
     api.postMovie(movie)
     .then((newMovie) => {
@@ -164,6 +173,30 @@ function App() {
     .finally (() => setIsLoading(false));
   }
 
+  function handleSearchMovies(search, isShort) {
+    setIsLoading(true);
+    localStorage.setItem('search-symbols', search);
+    localStorage.setItem('search-shortMovie', JSON.stringify(isShort));
+    const filtered = filterMovies.bind(null, search, isShort);
+    if (movies.length === 0) {
+      apiMovie.getMovies()
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem('allMovies', JSON.stringify(res));
+        setMovies(res);
+        setSearchMovies(filtered(res));
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
+    } else {
+      setSearchMovies(filtered(movies));
+    }
+  }
+
 
   useEffect(() => {
       handleCheckToken();
@@ -171,11 +204,11 @@ function App() {
   
   useEffect(() => {
     if (isLoggedIn) {
-      Promise.all([api.getUser(), apiMovie.getMovies()])
-      .then(([userInfo, movies]) => {
-        console.log(movies);
+      Promise.all([api.getUser(), api.getUserMovies()])
+      .then(([userInfo, savedMovies]) => {
+        console.log(savedMovies);
         setCurrentUser(userInfo.user);
-        setMovies(movies);    
+        setSavedMovies(savedMovies);    
       })
       .catch((err) => {
         console.log('Ошибка. Запрос не выполнен');
@@ -217,12 +250,13 @@ function App() {
             element={<ProtectedRoute 
               element={Movies} 
               isLoggedIn={isLoggedIn}
-              isLoading={isLoading} 
+              isLoading={isLoading}
+              onSearch={handleSearchMovies} 
               onSave={handleSaveMovie}
               onCheckSaved={checkSaved}
               onDelete={handleDeleteMovie}
               isSaved={isSaved}
-              movies={movies}
+              movies={searchMovies}
               onBurgerClick={handlePopupHeaderMenuClick}/>
             } /> 
           <Route path="/saved-movies" 

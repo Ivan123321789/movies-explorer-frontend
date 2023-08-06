@@ -46,7 +46,7 @@ class Api {
     .then(this._checkServerResponse)
   }
 
-   // Получение фильмов 
+   // Получение фильмов, сохраненных пользователем
    getUserMovies() {
     return fetch(`${this._url}/movies`, {
       method: 'GET',
@@ -56,27 +56,6 @@ class Api {
   }
 
   // Добавление фильма
-  // postMovie(data) {
-  //   return fetch(`${this._url}/movies`, {
-  //       method: 'POST',
-  //       headers: this._headers,
-  //       body: JSON.stringify({
-  //         country: data.country,
-  //         director: data.director,
-  //         duration: data.duration,
-  //         year: data.year,
-  //         description: data.description,
-  //         image: `https://api.nomoreparties.co${data.image.url}`,
-  //         trailerLink: data.trailerLink,
-  //         thumbnail: `https://api.nomoreparties.co${data.image.formats.thumbnail.url}`,
-  //         movieId: data.id.toString(),
-  //         nameRU: data.nameRU,
-  //         nameEN: data.nameEN,
-  //       })
-  //   })
-  //   .then(this._checkServerResponse)
-  // }
-
   postMovie(data) {
     return fetch(`${this._url}/movies`, {
         method: 'POST',

@@ -8,10 +8,12 @@ import MoviesList from '../MoviesList/MoviesList';
 import MoreFilmsButton from '../MoreFilmsButton/MoreFilmsButton';
 import Footer from '../Footer/Footer';
 
-function Movies({onBurgerClick, movies, isSaved, onSave, onDelete}) {
+function Movies({onBurgerClick, movies, onSearch, isSaved, onSave, onDelete}) {
   const {width, isScreenMd, isScreenXl} = useResize();
   const [cardsShow, setCardsShow] = useState('');
   const [more, setMore] = useState('');
+  const savedSearchSymbols = localStorage.getItem('search-symbols') || '';
+  const savedSearchShortMovies = (localStorage.getItem('search-shortMovie') === 'true') ? true : false;
 
   const cardToShow = () => {
     let showCards = 0;
@@ -35,17 +37,28 @@ function Movies({onBurgerClick, movies, isSaved, onSave, onDelete}) {
     setCardsShow(newCardsShow);
   }
 
+  const moreCards = movies.length > cardsShow;
+
   useEffect(() => {
     cardToShow();
-  }, [width])
+  }, [width]);
 
-  const moreCards = movies.length > cardsShow
+  useEffect(() => {
+    const moviesForRendering = JSON.parse(localStorage.getItem('allMovies') || '[]');
+    if (moviesForRendering.length > 0) {
+      onSearch(savedSearchSymbols, savedSearchShortMovies);
+    }
+  }, []);
+
   
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
       <main >
-        <SearchForm />
+        <SearchForm 
+          onSearch={onSearch} 
+          savedSearchSymbols={savedSearchSymbols} 
+          savedSearchShortMovies={savedSearchShortMovies}/>
         {/* <Preloader /> */}
         <section className='movies'>
           <MoviesList 
