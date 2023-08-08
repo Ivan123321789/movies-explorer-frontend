@@ -1,0 +1,286 @@
+.authform {
+  width: 396px;
+  padding: 70px 0 70px;
+  margin: 0 auto;
+}
+
+.authform__logo {
+  width: 38px;
+  height: 38px;
+  padding-bottom: 36px;
+  cursor: pointer;
+}
+
+.authform__logo:hover {
+  opacity: .8;
+}
+
+.authform__title {
+  margin: 0;
+  padding-bottom: 40px;
+  text-align: start;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.authform__sign {
+  width: 396px;
+  display: flex;
+  justify-content: center;
+}
+
+.authform__subtitle {
+  margin: 0;
+  padding-right: 6px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #A0A0A0;
+}
+
+.authform__link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #2BE080;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.authform__link:hover {
+  opacity: .7;
+}
+
+.authform__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 380px;
+  margin-bottom: 16px;
+}
+
+.authform__form-label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #A0A0A0;
+}
+
+.authform__form-input {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  padding-bottom: 10px;
+  width: 396px;
+  height: 17px;
+  margin: 5px 0 3px;
+  background: #FFFFFF;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.authform__form-input:last-child {
+  padding-bottom: 0;
+}
+
+.authform__form-input:focus {
+  outline: none;
+  background: #fff;
+  border: 1px solid #2BE080;
+}
+
+.authform__form-input_true {
+  color: #000;
+  border-bottom: 1px solid #2BE080;
+}
+
+.authform__form-input_false {
+  color: #EE3465;
+  border-bottom: 1px solid #EE3465;
+}
+
+.authform__form-input_invalid {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  padding-left: 15px;
+  width: 396px;
+  height: 46px;
+  margin: 10px 0;
+  background: #F9F9F9;
+  border-radius: 8px;
+  border: none;
+  color: #EE3465;
+}
+
+.authform__form-input-error {
+  display: block;
+  box-sizing: border-box;
+  width: 396px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: #EE3465;
+  margin: 0 0 0 0;
+  box-sizing: border-box;
+  height: 20px;
+}
+
+.authform__form-fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-align: left;
+}
+
+.authform__form-message {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  min-height: 10px;
+}
+
+.authform__form-message_error {
+  color: #EE3465;
+}
+
+.authform__form-message_success {
+  color: #2be080;
+}
+
+.authform__form-submit {
+  width: 396px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  border-radius: 3px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+.authform__form-submit:hover {
+  opacity: .8;
+}
+
+.authform__form-submit_ok {
+  background: #2be080;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.authform__form-submit_disabled {
+  background: #F8F8F8;
+  color: #C2C2C2;
+}
+
+.authform__form-link {
+  width: 396px;
+  height: 17px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .authform {
+    padding: 232px 0;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .authform {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    padding: 56px 0 30px;
+    align-items: center;
+  }
+
+  .authform__logo {
+    padding-bottom: 46px;
+    margin: 0 auto;
+  }
+
+  .authform__title {
+    padding-bottom: 79px;
+    margin: 0 auto;
+  }
+
+  .authform__form {
+    width: 260px;
+    height: 469px;
+    margin-bottom: 14px;
+  }
+
+  .authform__form-input {
+    width: 260px;
+    margin-bottom: 0;
+  }
+
+  .authform__form-input_invalid {
+    width: 260px;
+  }
+
+  .authform__form-submit {
+    width: 260px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .authform__subtitle {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .authform__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .authform__form-link {
+    width: 260px;
+    height: 45px;
+    margin: 0;
+  }
+
+  .authform__form-input-error {
+    width: 260px;
+    height: 24px;
+    padding-bottom: 0;
+  }
+
+  .authform__sign {
+    width: 280px;
+  }
+
+}

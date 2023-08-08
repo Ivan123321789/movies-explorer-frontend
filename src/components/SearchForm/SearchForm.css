@@ -1,0 +1,143 @@
+.search-form {
+  width: 1140px;
+  margin: 70px auto;
+  height: 72px;
+  background: #F9F9F9;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search__underline {
+  width: 1140px;
+  margin: 0 auto 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.search-form__img {
+  background-image: url(../../images/lupa.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 34px;
+  height: 34px;
+  margin: 19px 10px 19px 19px;
+}
+
+.search-form__button {
+  background-color: #2BE080;
+  background-image: url(../../images/find.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+  height: 34px;
+  max-width: 34px;
+  width: 100%;
+  border: none;
+  margin: 19px 30px 0 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-form__button:hover {
+  opacity: .8;
+}
+
+.search-form__input-block {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.search-form__input {
+  width: 100%;
+  border: none;
+  height: 72px;
+  max-width: 786px;
+  background: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #A0A0A0;
+  padding: 0;
+  border-radius: 9px;
+}
+
+.search-form__input:focus {
+  outline: none;
+  background: #fff;
+  border: 1px solid #2BE080;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 1280px) {
+  .search-form {
+    width: calc(100% - 140px);
+    max-width: 1140px;
+    margin: 70px;
+  }
+
+  .search__underline {
+    width: calc(100% - 140px);
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    width: calc(100% - 60px);
+    margin: 80px 30px 109px;
+  }
+
+  .search__underline {
+    width: calc(100% - 60px);
+  }
+
+  .search-form__button {
+    margin-right: 19px;
+
+  }
+
+}
+
+@media screen and (max-width: 630px) {
+  .search-form {
+    width: calc(100% - 20px);
+    margin: 80px 10px 46px;
+    flex-direction: column;
+    position: relative;
+    background-color: #fff;
+    height: 136px;
+  }
+
+  .search__underline {
+    width: calc(100% - 20px);
+  }
+
+  .search-form__img {
+    display: none;
+  }
+
+  .search-form__input {
+    font-size: 14px;
+    padding-right: 75px;
+    padding-left: 19px;
+    width: 100%;
+  }
+
+  .search-form__input:focus {
+    padding-right: 75px;
+  }
+
+  .search-form__button {
+    position: absolute;
+    right: 0;
+  }
+
+}
