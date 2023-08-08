@@ -9,7 +9,7 @@ function Profile({messageBad, messageGood, onUpdateProfile, onBurgerClick, reset
   const { values, errors, isValid, handleChange, setValues, resetForm} = useValidation();
   const disabledSubmitButton = (!isValid || (currentUser.name === values.name && currentUser.email === values.email));
   const buttonProfileClassName = `${!disabledSubmitButton ? "profile__button-save" : "profile__button-save_inactive" }`;
-  const spanClassName = `${messageGood !== "" ? "profile__span" : ""} ${messageBad !== "" ? "profile__span-error" : ""}}`
+  const spanClassName = `${messageGood !== "" ? "profile__span" : ""} ${messageBad !== "" ? "profile__span-error" : ""}`
   const [isInputDisabled, setIsInputDisabled] = useState(true);
   
   useEffect(() => {

@@ -4,12 +4,4 @@ const getResponse = (res) => {
   return res.ok ? res.json() : Promise.reject('Ошибка: $(res.status)');
 }
 
-export const getMovies = () => {
-  return fetch(`${MOVIE_URL}`, {
-    method: 'GET',
-    headers: {
-      'Content-type': 'application/json',
-    }
-  })
-  .then(getResponse);
-}
+export const getMovies = () =>  fetch(`${MOVIE_URL}`).then(getResponse);

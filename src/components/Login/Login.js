@@ -1,8 +1,9 @@
 import {useEffect} from 'react';
 import useValidation from '../../hooks/useValidation';
 import AuthForm from '../AuthForm/AuthForm';
+import { Navigate } from 'react-router-dom';
 
-function Login({message, resetMessage, onLogin}) {
+function Login({message, resetMessage, onLogin, isLoggedIn}) {
   
   const {values, handleChange, resetForm, errors, isValid} = useValidation();
 
@@ -24,6 +25,7 @@ function Login({message, resetMessage, onLogin}) {
       onLogin(values);
     }
   }
+  if (isLoggedIn) return (<Navigate to='/' replace />)
 
   return (
     <AuthForm

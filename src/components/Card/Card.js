@@ -1,27 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Card.css';
 
-function Card({movie, isSaved, onSave, onDelete}) {
+function Card({movie, onSave, onDelete, checkSaved}) {
   const location = useLocation();
-  const saveButtonClassName = (`card__select ${isSaved ? "card__select_active" : null}`)
+  const [isSaved, setIsSaved] = useState(checkSaved ? checkSaved(movie) : true);
+  const saveButtonClassName = (`card__select ${isSaved ? "card__select_active" : ''}`);
+
+  const handleChangeStatus = () => {
+    return isSaved ? onDelete(movie) : onSave(movie);
+  }
 
   function handleClickSave() {
-    onSave(movie)
+    handleChangeStatus().then(() => setIsSaved(!isSaved));
   }
 
   function handleClickDelete() {
-    onDelete(movie._id)
+    onDelete(movie);
   }
 
   function movieDuration() {
     const hour = Math.floor(movie.duration/60);
-    const min = movie.duration - (hour * 60);
-    const time = hour + " ч " + min + " м";
+    const min = movie.duration % 60;
+    const time = `${hour} ч ${min} м`;
     return time;
   }
 
   const newDuration = movieDuration();
+  
   return (
     <li className="card" >
       <div className='card__container'>

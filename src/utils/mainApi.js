@@ -1,4 +1,6 @@
-class Api {
+import { BASE_URL } from "./constans";
+
+class mainApi {
   constructor ({url, headers}) {
     this._url = url;
     this._headers = headers;
@@ -14,6 +16,24 @@ class Api {
     }
   }
 
+  register = (userData) => fetch(`${this._url}/signup`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+  })
+  .then(this._checkServerResponse);
+
+  authorize = (userData) => fetch(`${this._url}/signin`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+  })
+  .then(this._checkServerResponse)
+
   // Проверка ответа сервера после запроса
   _checkServerResponse(res) {
       if (res.ok) {
@@ -24,24 +44,21 @@ class Api {
   };
 
   // Загрузка информации о пользователе с сервера
-  getUser() {
+  getUser(token) {
+    if (token) this.setToken(token);
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: this._headers
     })
     .then(this._checkServerResponse)
-  } 
+  }
 
-  // Замена данных пользователя 
+  // Замена данных пользователя
   changeProfile(data) {
-    console.log(data);
     return fetch(`${this._url}/users/me`, {
         method: 'PATCH',
         headers: this._headers,
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email
-        }) 
+        body: JSON.stringify(data)
     })
     .then(this._checkServerResponse)
   }
@@ -77,7 +94,7 @@ class Api {
     .then(this._checkServerResponse)
   }
 
-  // Удаление фильма 
+  // Удаление фильма
   deleteMovie(id) {
     return fetch(`${this._url}/movies/${id}`, {
         method: 'DELETE',
@@ -86,19 +103,12 @@ class Api {
     .then(this._checkServerResponse)
   }
 
-  changeSaveCardStatus(data, id, isSaved) {
-    if (!isSaved) {
-      return this.postMovie(data);
-    } else {
-      return this.deleteMovie(id);
-    }
-  }
 }
- 
-let token = localStorage.getItem("token");
-export const api = new Api({
-  url: 'http://localhost:3333',
-  // url: 'https://api.ivandiplom.nomoreparties.sbs',
+
+const token = localStorage.getItem("token");
+
+export const api = new mainApi({
+  url: BASE_URL,
   headers: {
     authorization:  `Bearer ${token}`,
     'content-type': 'application/json'

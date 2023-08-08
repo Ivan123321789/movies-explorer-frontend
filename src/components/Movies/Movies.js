@@ -8,7 +8,7 @@ import MoviesList from '../MoviesList/MoviesList';
 import MoreFilmsButton from '../MoreFilmsButton/MoreFilmsButton';
 import Footer from '../Footer/Footer';
 
-function Movies({onBurgerClick, movies, onSearch, isSaved, onSave, onDelete}) {
+function Movies({onBurgerClick, isLoading, allMovies, movies, onSearch, onSave, onDelete, checkSaved, searchErrorMessage }) {
   const {width, isScreenMd, isScreenXl} = useResize();
   const [cardsShow, setCardsShow] = useState('');
   const [more, setMore] = useState('');
@@ -42,13 +42,12 @@ function Movies({onBurgerClick, movies, onSearch, isSaved, onSave, onDelete}) {
   useEffect(() => {
     cardToShow();
   }, [width]);
-
+  
   useEffect(() => {
-    const moviesForRendering = JSON.parse(localStorage.getItem('allMovies') || '[]');
-    if (moviesForRendering.length > 0) {
+    if (allMovies.length > 0) {
       onSearch(savedSearchSymbols, savedSearchShortMovies);
     }
-  }, []);
+  }, [allMovies]);
 
   
   return (
@@ -59,18 +58,27 @@ function Movies({onBurgerClick, movies, onSearch, isSaved, onSave, onDelete}) {
           onSearch={onSearch} 
           savedSearchSymbols={savedSearchSymbols} 
           savedSearchShortMovies={savedSearchShortMovies}/>
-        {/* <Preloader /> */}
         <section className='movies'>
+        {isLoading ?
+          <Preloader />
+          
+          :
+          <>
           <MoviesList 
-            movies={movies} 
-            isSaved={isSaved} 
+            movies={movies}
             onSave={onSave} 
             onDelete={onDelete}
             cardsShow={cardsShow}
+            checkSaved={checkSaved}
           />
+          {
+            searchErrorMessage && <p className="movies__message">{searchErrorMessage}</p>
+          }
           { moreCards ? (
             <MoreFilmsButton onClickMore={handleClickMore}/>
           ) : null}
+          </>
+        }
           
         </section>
       </main>
