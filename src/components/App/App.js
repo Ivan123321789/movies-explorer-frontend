@@ -90,7 +90,7 @@ function App() {
 
   function handleCheckToken() {
     const token = localStorage.getItem('token');
-    if (!token) setIsCheckingToken(false);
+    if (!token) return setIsCheckingToken(false);
     api.getUser(token)
       .then((res) => {
         if (res) {
