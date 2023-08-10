@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Card.css';
 
 function Card({movie, onSave, onDelete, checkSaved}) {
   const location = useLocation();
-  const [isSaved, setIsSaved] = useState(checkSaved ? checkSaved(movie) : true);
+  const isSaved = checkSaved ? checkSaved(movie) : true;
   const saveButtonClassName = (`card__select ${isSaved ? "card__select_active" : ''}`);
 
   const handleChangeStatus = () => {
@@ -12,7 +11,7 @@ function Card({movie, onSave, onDelete, checkSaved}) {
   }
 
   function handleClickSave() {
-    handleChangeStatus().then(() => setIsSaved(!isSaved));
+    handleChangeStatus();
   }
 
   function handleClickDelete() {

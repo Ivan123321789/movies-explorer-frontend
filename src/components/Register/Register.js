@@ -17,12 +17,11 @@ function Register({message, resetMessage, onRegister, isLoggedIn}) {
     handleChange(evt);
   }
 
-  function handleSubmit(evt) {
-    evt.preventDefault();
+  function handleSubmit() {
     if (!values.name || !values.email || !values.password) {
       return;
-   }
-   onRegister(values);
+    }
+    return onRegister(values);
   }
   
   if (isLoggedIn) return (<Navigate to='/' replace />)

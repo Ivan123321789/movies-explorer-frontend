@@ -17,6 +17,7 @@ import * as success from '../../utils/successMessages';
 import { api } from '../../utils/mainApi';
 import * as movieApi from '../../utils/movieApi';
 import Preloader from '../Preloader/Preloader';
+import { SHORT_MOVIES_DURATION } from '../../utils/movieParams';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -52,7 +53,7 @@ function App() {
   }
 
   function handleLogin({ email, password }) {
-    api.authorize({ email, password })
+    return api.authorize({ email, password })
       .then((res) => {
         api.setToken(res.token);
         localStorage.setItem('token', res.token);
@@ -73,7 +74,7 @@ function App() {
   }
 
   function handleRegister({ name, email, password }) {
-    api.register({ name, email, password })
+    return api.register({ name, email, password })
       .then(() => {
         handleLogin({ email, password });
         setRegisterErrorMessage(success.youAreWithUs);
@@ -119,7 +120,7 @@ function App() {
   }
 
   function handleUpdateProfile(data) {
-    api.changeProfile(data)
+    return api.changeProfile(data)
       .then((newData) => {
         console.log(1);
         setCurrentUser(newData.user);
@@ -147,7 +148,7 @@ function App() {
     return movies.filter((movie) => {
       const searchRuSymbols = movie.nameRU.toLowerCase().includes(search.toLowerCase());
       const searchEnSymbols = movie.nameEN.toLowerCase().includes(search.toLowerCase());
-      const shortMovie = isShort ? movie.duration <= 40 : true;
+      const shortMovie = isShort ? movie.duration <= SHORT_MOVIES_DURATION : true;
       return (searchRuSymbols || searchEnSymbols) && shortMovie;
     })
   }
@@ -156,7 +157,6 @@ function App() {
     return api.postMovie(movie)
       .then((newMovie) => {
         setSavedMovies([newMovie.movie, ...savedMovies]);
-        checkSaved(newMovie);
       })
       .catch((err) => {
         console.log(err);
@@ -165,15 +165,14 @@ function App() {
 
   function handleDeleteMovie(movie) {
     const deletedMovieId = movie._id ? movie._id : savedMovies.find(item => item.movieId === movie.id && item.owner === currentUser._id)._id;
-    setIsLoading(true);
     return api.deleteMovie(deletedMovieId)
       .then(() => {
-        setSavedMovies(savedMovies.filter((c) => c._id !== deletedMovieId))
+        setSavedMovies(savedMovies.filter((c) => c._id !== deletedMovieId));
+        setSearchSavedMovies(savedMovies.filter((c) => c._id !== deletedMovieId));
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => setIsLoading(false));
+      });
   }
 
   function handleSearchMovies(search, isShort) {
@@ -215,9 +214,9 @@ function App() {
   }
 
 
-  useEffect(() => {
-    handleCheckToken();
-  }, [])
+  // useEffect(handleSearchMovies, [savedMovies]);
+
+  useEffect(handleCheckToken, [])
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -225,6 +224,7 @@ function App() {
         .then(([userInfo, savedMovies]) => {
           setCurrentUser(userInfo.user);
           setSavedMovies(savedMovies.data);
+          setSearchSavedMovies(savedMovies.data);
           setMovies(JSON.parse(localStorage.getItem('allMovies') || '[]'));
         })
         .catch((err) => {
@@ -277,7 +277,7 @@ function App() {
               checkSaved={checkSaved}
               onDelete={handleDeleteMovie}
               allMovies={movies}
-              movies={searchMovies}
+              searchMovies={searchMovies}
               searchErrorMessage={searchErrorMessage}
               onBurgerClick={handlePopupHeaderMenuClick} />
             } />
@@ -286,8 +286,6 @@ function App() {
               element={SavedMovies}
               isLoggedIn={isLoggedIn}
               isLoading={isLoading}
-              // movies={searchSavedMovies}
-              // savedMovies={savedMovies}
               savedMovies={searchSavedMovies}
               onSearch={handleSearchSavedMovies}
               onDelete={handleDeleteMovie}

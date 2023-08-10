@@ -6,8 +6,9 @@ import './Profile.css';
 
 function Profile({messageBad, messageGood, onUpdateProfile, onBurgerClick, resetMessage, onSignOut}) {
   const currentUser = useContext(CurrentUserContext);
+  const [isFetching, setIsFetching] = useState(false);
   const { values, errors, isValid, handleChange, setValues, resetForm} = useValidation();
-  const disabledSubmitButton = (!isValid || (currentUser.name === values.name && currentUser.email === values.email));
+  const disabledSubmitButton = (!isValid || (currentUser.name === values.name && currentUser.email === values.email) || isFetching);
   const buttonProfileClassName = `${!disabledSubmitButton ? "profile__button-save" : "profile__button-save_inactive" }`;
   const spanClassName = `${messageGood !== "" ? "profile__span" : ""} ${messageBad !== "" ? "profile__span-error" : ""}`
   const [isInputDisabled, setIsInputDisabled] = useState(true);
@@ -29,13 +30,17 @@ function Profile({messageBad, messageGood, onUpdateProfile, onBurgerClick, reset
 
   function handleSubmit(evt) {
     evt.preventDefault();
+    setIsFetching(true);
     onUpdateProfile({
       name: values.name || currentUser.name,
       email: values.email || currentUser.email
-    });
-    handleEditProfile();
-    resetForm();
+    }).then(() => {
+      setIsFetching(false);
+      handleEditProfile();
+    })
   }
+
+  useEffect(() => resetForm({ name: currentUser.name, email: currentUser.email}), [currentUser])
 
   return (
     <>

@@ -17,14 +17,13 @@ function Login({message, resetMessage, onLogin, isLoggedIn}) {
     handleChange(evt);
   }
 
-  function handleSubmit(evt) {
-    evt.preventDefault();
+  function handleSubmit() {
     if (!values.email || !values.password) {
       return;
-    } else {
-      onLogin(values);
     }
+    return onLogin(values);
   }
+
   if (isLoggedIn) return (<Navigate to='/' replace />)
 
   return (

@@ -3,14 +3,14 @@ import { useLocation } from 'react-router-dom';
 import './MoviesList.css';
 import Card from '../Card/Card';
 
-function MoviesList({movies, savedMovies, onSave, onDelete, cardsShow, checkSaved}) {
+function MoviesList({searchMovies, savedMovies, onSave, onDelete, cardsShow, checkSaved}) {
   const location = useLocation();
   
   return (
     <>
       {location.pathname === '/movies' ? (
         <ul className='movies__items'>
-          { movies.slice(0, cardsShow).map((movie) => (
+          { searchMovies.slice(0, cardsShow).map((movie) => (
             <Card
               // key={movie.id || movie.movieId}
               key={movie.id}

@@ -6,8 +6,8 @@ import { useForm } from '../../hooks/useForm';
 function SearchForm({ onSearch, savedSearchSymbols, savedSearchShortMovies }) {
   const [searchKey, setSearchKey] = useState(savedSearchSymbols);
   const [searchShort, setSearchShort] = useState(savedSearchShortMovies);
-  const { values, handleChange } = useForm();
-
+  const { values, handleChange } = useForm({ searchPlace: '' });
+  
   function onChange(evt) {
     setSearchKey(evt.target.value);
     handleChange(evt);

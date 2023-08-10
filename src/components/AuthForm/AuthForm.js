@@ -1,11 +1,18 @@
-import React from 'react';
+import { useState } from 'react';
 import {Link,NavLink} from "react-router-dom";
 import './AuthForm.css';
 import headerLogo from '../../images/logo.svg';
 
 function AuthForm({isValid, title, name, message, textButton, route, subtitle, go, children, onSubmit}) {
   const authformMessageClassName = `authform__form-message ${ isValid ? "authform__form-message_success" : "authform__form-message_error"}`;
-  const authformButtonClassName = `authform__form-submit ${!isValid ? "authform__form-submit_disabled" : "authform__form-submit_ok"}`;
+  const authformButtonClassName = 'authform__form-submit';
+  const [isFetching, setIsFetching] = useState(false);
+  console.log(!isValid || isFetching);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsFetching(true);
+    onSubmit().finally(() => setIsFetching(false));
+  }
   return (
     <main>
       <section className="authform">
@@ -17,7 +24,7 @@ function AuthForm({isValid, title, name, message, textButton, route, subtitle, g
           />
         </Link>
         <h1 className="authform__title">{title}</h1>
-        <form className="authform__form " name={`form-${name}`} onSubmit={onSubmit}>
+        <form className="authform__form " name={`form-${name}`} onSubmit={handleSubmit}>
           <div>
             <fieldset className='authform__form-fieldset'>
               
@@ -30,9 +37,9 @@ function AuthForm({isValid, title, name, message, textButton, route, subtitle, g
             <button
               className={authformButtonClassName}
               type="submit"
-              disabled={!isValid}
-              >
-                {textButton}
+              disabled={!isValid || isFetching}
+            >
+              {textButton}
             </button>
           </div>
         </form>

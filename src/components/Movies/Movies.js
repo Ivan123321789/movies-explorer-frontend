@@ -7,11 +7,14 @@ import Preloader from '../Preloader/Preloader';
 import MoviesList from '../MoviesList/MoviesList';
 import MoreFilmsButton from '../MoreFilmsButton/MoreFilmsButton';
 import Footer from '../Footer/Footer';
+import { CARD_ADDED_QUANTITY, CARD_INITIAL_QUANTITY } from '../../utils/movieParams';
 
-function Movies({onBurgerClick, isLoading, allMovies, movies, onSearch, onSave, onDelete, checkSaved, searchErrorMessage }) {
+function Movies({onBurgerClick, isLoading, allMovies, searchMovies, onSearch, onSave, onDelete, checkSaved, searchErrorMessage }) {
   const {width, isScreenMd, isScreenXl} = useResize();
-  const [cardsShow, setCardsShow] = useState('');
-  const [more, setMore] = useState('');
+  const [cardsShow, setCardsShow] = useState(0);
+  const [cardsInit, setCardsInit] = useState(0);
+  const [more, setMore] = useState(0);
+  
   const savedSearchSymbols = localStorage.getItem('search-symbols') || '';
   const savedSearchShortMovies = (localStorage.getItem('search-shortMovie') === 'true') ? true : false;
 
@@ -19,35 +22,42 @@ function Movies({onBurgerClick, isLoading, allMovies, movies, onSearch, onSave, 
     let showCards = 0;
     let more = 0;
     if(isScreenXl) {
-      showCards = 12;
-      more = 3;
+      showCards = CARD_INITIAL_QUANTITY.PC;
+      more = CARD_ADDED_QUANTITY.PC;
     } else if(isScreenMd) {
-      showCards = 8;
-      more = 2;
+      showCards = CARD_INITIAL_QUANTITY.TABLET;
+      more = CARD_ADDED_QUANTITY.OTHER;
     } else {
-      showCards = 5;
-      more = 2;
+      showCards = CARD_INITIAL_QUANTITY.MOBILE;
+      more = CARD_ADDED_QUANTITY.OTHER;
     }
-    setCardsShow(showCards);
+    setCardsInit(showCards);
     setMore(more);  
   }
 
   function handleClickMore() {
-    const newCardsShow = cardsShow + more;
+    let numberOfMore = more;
+    if (cardsShow % more !== 0 && isScreenMd) {
+      numberOfMore = more - (cardsShow % more);
+    }
+    const newCardsShow = cardsShow + numberOfMore;
     setCardsShow(newCardsShow);
   }
 
-  const moreCards = movies.length > cardsShow;
+  const moreCards = searchMovies.length > cardsShow;
 
-  useEffect(() => {
-    cardToShow();
-  }, [width]);
+  useEffect(cardToShow, [width]);
   
   useEffect(() => {
     if (allMovies.length > 0) {
       onSearch(savedSearchSymbols, savedSearchShortMovies);
     }
   }, [allMovies]);
+
+
+  useEffect(() => {
+    setCardsShow(cardsInit);
+  }, [searchMovies])
 
   
   return (
@@ -65,7 +75,7 @@ function Movies({onBurgerClick, isLoading, allMovies, movies, onSearch, onSave, 
           :
           <>
           <MoviesList 
-            movies={movies}
+            searchMovies={searchMovies}
             onSave={onSave} 
             onDelete={onDelete}
             cardsShow={cardsShow}
