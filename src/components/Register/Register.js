@@ -1,8 +1,9 @@
 import {useEffect} from 'react';
 import useValidation from '../../hooks/useValidation';
 import AuthForm from '../AuthForm/AuthForm';
+import { Navigate } from 'react-router-dom';
 
-function Register({resetMessage}) {
+function Register({message, resetMessage, onRegister, isLoggedIn}) {
   
   const {values, handleChange, resetForm, errors, isValid} = useValidation();
 
@@ -16,16 +17,26 @@ function Register({resetMessage}) {
     handleChange(evt);
   }
 
+  function handleSubmit() {
+    if (!values.name || !values.email || !values.password) {
+      return;
+    }
+    return onRegister(values);
+  }
+  
+  if (isLoggedIn) return (<Navigate to='/' replace />)
+
   return (
     <AuthForm
       isValid={isValid}
       title='Добро пожаловать!'
       name='register'
-      message={''}
+      message={message || ''}
       textButton='Зарегистрироваться'
       route='/signin'
       subtitle='Уже зарегистрированы?'
       go='Войти'
+      onSubmit={handleSubmit}
     >
       <label className="authform__form-label" htmlFor='name'>Имя
         <input
@@ -54,6 +65,7 @@ function Register({resetMessage}) {
           errors.email === '' ? "authform__form-input_true" : "authform__form-input_false"}`}
           value={values.email || ""}
           onChange={onChange}
+          pattern="([A-zА-я])+([0-9\-_\+\.])*([A-zА-я0-9\-_\+\.])*@([A-zА-я])+([0-9\-_\+\.])*([A-zА-я0-9\-_\+\.])*[\.]([A-zА-я])+"
         />
         <span className="authform__form-input-error">{errors.email}</span>
       </label>

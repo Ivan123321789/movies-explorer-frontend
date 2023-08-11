@@ -184,19 +184,16 @@
   font-size: 14px;
   line-height: 17px;
   text-align: center;
+  background: #2be080;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 
 .authform__form-submit:hover {
   opacity: .8;
 }
 
-.authform__form-submit_ok {
-  background: #2be080;
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-.authform__form-submit_disabled {
+.authform__form-submit:disabled {
   background: #F8F8F8;
   color: #C2C2C2;
 }

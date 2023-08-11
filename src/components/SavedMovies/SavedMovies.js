@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './SavedMovies.css';
 import HeaderMovie from '../Header/HeaderMovie';
 import SearchForm from '../SearchForm/SearchForm';
-import Preloader from '../Preloader/Preloader';
-import MoviesList2 from '../MoviesList/MovieList2';
 import FooterSaved from '../Footer/FooterSaved';
+import MoviesList from '../MoviesList/MoviesList';
 
-function SavedMovies({onBurgerClick}) {
+function SavedMovies({savedMovies, movies, onSearch, onBurgerClick, onDelete}) {
+  useEffect(() => onSearch('', false), []);
   return (
     <>
       <HeaderMovie onBurgerClick={onBurgerClick}/>
       <main>
-        <SearchForm />
-        {/* <Preloader /> */}
+        <SearchForm onSearch={onSearch} />
         <section className='movies'>
-          <MoviesList2 />
+          <MoviesList savedMovies={savedMovies} onDelete={onDelete}/>
         </section>
       </main>
       <FooterSaved />

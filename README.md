@@ -10,6 +10,13 @@ https://www.figma.com/file/cASM20ikAsPlTi2doec68Q/Diploma?type=design&node-id=89
 
 https://ivandiplom.nomoreparties.sbs
 
+## Ссылка на PR
+
+https://github.com/Ivan123321789/movies-explorer-frontend/pull/2
+
 ## Описание прокта
 
 В работе
+
+
+

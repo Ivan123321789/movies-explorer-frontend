@@ -1,62 +1,37 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './MoviesList.css';
 import Card from '../Card/Card';
-import film1 from '../../images/film1.png';
-import film2 from '../../images/film2.png';
 
-function MoviesList() {
+function MoviesList({searchMovies, savedMovies, onSave, onDelete, cardsShow, checkSaved}) {
+  const location = useLocation();
+  
   return (
     <>
-      <ul className='movies__items'>
-        <Card
-        title='Короткое название'
-        duration='1ч 42мин'
-        picture={film1}/>
-        <Card
-        title='Длинное название фильма которое надо спрятать'
-        duration='40 мин'
-        picture={film2} />
-        <Card
-        title='Короткое название'
-        duration='1ч 42мин'
-        picture={film1}/>
-        <Card
-        title='Длинное название фильма которое надо спрятать'
-        duration='40 мин'
-        picture={film2} />
-        <Card
-        title='Короткое название'
-        duration='1ч 42мин'
-        picture={film1}/>
-        <Card
-        title='Длинное название фильма которое надо спрятать'
-        duration='40 мин'
-        picture={film2} />
-        <Card
-        title='Короткое название'
-        duration='1ч 42мин'
-        picture={film1}/>
-        <Card
-        title='Длинное название фильма которое надо спрятать'
-        duration='40 мин'
-        picture={film2} />
-        <Card
-        title='Короткое название'
-        duration='1ч 42мин'
-        picture={film1}/>
-        <Card
-        title='Длинное название фильма которое надо спрятать'
-        duration='40 мин'
-        picture={film2} />
-        <Card
-        title='Короткое название'
-        duration='1ч 42мин'
-        picture={film1}/>
-        <Card
-        title='Длинное название фильма которое надо спрятать'
-        duration='40 мин'
-        picture={film2} />
+      {location.pathname === '/movies' ? (
+        <ul className='movies__items'>
+          { searchMovies.slice(0, cardsShow).map((movie) => (
+            <Card
+              // key={movie.id || movie.movieId}
+              key={movie.id}
+              movie={movie}
+              onSave={onSave}
+              checkSaved={checkSaved}
+              onDelete={onDelete}
+            />
+          ))}
+        </ul>
+      ) : (
+        <ul className='movies__items'>
+        { savedMovies.map((movie) => (
+          <Card
+            key={movie.id || movie.movieId}
+            movie={movie}
+            onDelete={onDelete}
+          />
+        ))}
       </ul>
+      )}
     </>
 );
 }

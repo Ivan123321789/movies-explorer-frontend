@@ -1,8 +1,9 @@
 import {useEffect} from 'react';
 import useValidation from '../../hooks/useValidation';
 import AuthForm from '../AuthForm/AuthForm';
+import { Navigate } from 'react-router-dom';
 
-function Login({resetMessage}) {
+function Login({message, resetMessage, onLogin, isLoggedIn}) {
   
   const {values, handleChange, resetForm, errors, isValid} = useValidation();
 
@@ -16,6 +17,15 @@ function Login({resetMessage}) {
     handleChange(evt);
   }
 
+  function handleSubmit() {
+    if (!values.email || !values.password) {
+      return;
+    }
+    return onLogin(values);
+  }
+
+  if (isLoggedIn) return (<Navigate to='/' replace />)
+
   return (
     <AuthForm
       isValid={isValid}
@@ -26,6 +36,7 @@ function Login({resetMessage}) {
       route='/signup'
       subtitle='Еще не зарегистрированы?'
       go='Регистрация'
+      onSubmit={handleSubmit}
     >
       <label className="authform__form-label" htmlFor='email'>Email
         <input
@@ -38,6 +49,7 @@ function Login({resetMessage}) {
           errors.email === '' ? "authform__form-input_true" : "authform__form-input_false"}`}
           value={values.email || ""}
           onChange={onChange}
+          pattern="([A-zА-я])+([0-9\-_\+\.])*([A-zА-я0-9\-_\+\.])*@([A-zА-я])+([0-9\-_\+\.])*([A-zА-я0-9\-_\+\.])*[\.]([A-zА-я])+"
         />
         <span className="authform__form-input-error">{errors.email}</span>
       </label>

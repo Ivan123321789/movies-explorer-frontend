@@ -1,10 +1,14 @@
 import React from 'react';
 import './MoreFilmsButton.css';
 
-function MoreFilmsButton() {
+function MoreFilmsButton({onClickMore}) {
+  function handleMore() {
+    onClickMore()
+  }
+  
   return (
     <>
-      <button type='button' className='movies__more-button'>Ещё</button>
+      <button type='button' className='movies__more-button' onClick={handleMore}>Ещё</button>
     </>
   )
 }
